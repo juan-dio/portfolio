@@ -1,0 +1,516 @@
+:root {
+  --primary: #ff00ff;
+  /* --primary: #38bdf8; */
+  --darker: #0f172a;
+  --dark: #22252c;
+  --text: #cccccc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: white;
+  background-color: var(--darker);
+}
+
+section {
+  padding-bottom: 3rem;
+}
+
+.container {
+  padding: 0 2rem;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -- HEADER START -- */
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header-fixed {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.15);
+}
+
+.navbar {
+  padding: 1rem 3rem;
+  background-color: var(--darker);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  padding: 0.5rem 0;
+}
+
+.logo a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.navbar button {
+  width: 25px;
+  height: 25px;
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.navbar button.active {
+  rotate: 180deg;
+}
+
+.navbar button div {
+  position: relative;
+  width: 100%;
+  height: 15px;
+}
+
+.navbar button span {
+  display: block;
+  width: 20px;
+  height: 5px;
+  background-color: var(--primary);
+  position: absolute;
+  top: 0;
+  border-radius: 2px;
+}
+
+.navbar button span:nth-child(1) {
+  left: 0;
+  transform-origin: top left;
+  rotate: 40deg;
+}
+
+.navbar button span:nth-child(2) {
+  right: 0;
+  transform-origin: top right;
+  rotate: -40deg;
+}
+
+.navbar nav {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  width: 100%;
+  background-color: var(--dark);
+  transition: all 0.25s ease-in-out;
+  z-index: -999;
+}
+
+.navbar nav.active {
+  top: 72px;
+  z-index: 9;
+}
+
+.navbar nav ul {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+}
+
+.navbar nav ul li a {
+  display: block;
+  padding: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* -- HEADER END -- */
+
+/* -- DASHBOARD START -- */
+
+section#dashboard {
+  margin-top: 80px;
+}
+
+.intro {
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.intro h1 span {
+  display: block;
+  color: var(--primary);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.typing-container {
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.input-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.7rem;
+  background-color: white;
+  margin-left: 4px;
+  animation: blink 0.5s linear infinite alternate;
+  z-index: -1;
+}
+
+.intro p {
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.intro p span {
+  color: white;
+}
+
+.intro a {
+  display: inline-block;
+  background-color: #ff00ff;
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 1.5rem;
+  text-decoration: none;
+}
+
+.profil-image {
+  width: 250px;
+  height: 250px;
+  margin: 2rem 0;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 10px solid var(--dark);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+.profil-image img {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  top: -60px;
+  z-index: -1;
+}
+
+/* .left {
+  order: 2;
+}
+
+.right {
+  order: 1;
+} */
+
+/* -- DASHBOARD END -- */
+
+/* -- ABOUT START -- */
+
+.title h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.about {
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about p,
+.connect p {
+  font-weight: 300;
+  color: var(--text);
+}
+
+.connect {
+  width: 100%;
+}
+
+.connect h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.connect p {
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon a {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--text);
+  border-radius: 50%;
+}
+
+.social-icon a:hover {
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  transition: all 0.25s;
+}
+
+.social-icon a svg {
+  fill: var(--text);
+}
+
+/* -- ABOUT END -- */
+
+/* -- SKILLS START -- */
+
+section#skills {
+  padding: 3rem 0;
+  background-color: var(--dark);
+}
+
+section#skills .title {
+  text-align: center;
+}
+
+section#skills .title h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skills-logo-container {
+  display: flex;
+  padding: 1rem 0;
+  overflow: hidden;
+}
+
+.skills-logo {
+  display: flex;
+  flex-shrink: 0;
+  animation: infinite-scrollX 7s linear infinite;
+}
+
+.skills-logo a {
+  margin: 0 1rem;
+}
+
+.skills-logo a svg {
+  height: 3rem;
+}
+
+/* -- SKILLS END -- */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  section {
+    padding-bottom: 4rem;
+  }
+
+  .container {
+    padding: 0 3rem;
+  }
+
+  /* -- HEADER START -- */
+
+  .navbar button {
+    display: none;
+  }
+
+  .navbar nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    background-color: transparent;
+    z-index: 9;
+  }
+
+  .navbar nav.active {
+    top: 0;
+    z-index: 9;
+  }
+
+  .navbar nav ul {
+    display: flex;
+  }
+
+  .navbar nav ul li a {
+    border: 0;
+    padding: 0 2rem;
+  }
+
+  /* -- HEADER END -- */
+
+  /* -- DASHBOARD START -- */
+
+  section#dashboard {
+    margin-top: 100px;
+  }
+
+  .box {
+    width: 50%;
+  }
+
+  .left {
+    order: 1;
+  }
+
+  .right {
+    order: 2;
+  }
+
+  .typing-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .profil-image {
+    width: 300px;
+    height: 300px;
+    margin: 3rem 0;
+  }
+
+  /* -- DASHBOARD END -- */
+
+  /* -- ABOUT START -- */
+
+  .title {
+    padding: 0 2rem;
+  }
+
+  .about,
+  .connect {
+    padding: 0 2rem;
+  }
+
+  /* -- ABOUT END -- */
+
+  /* -- SKILLS START -- */
+
+  section#skills {
+    padding: 5rem 0;
+  }
+
+  section#skills .title h2 {
+    font-size: 3rem;
+  }
+
+  .skills-logo {
+    display: flex;
+    flex-shrink: 0;
+    animation: infinite-scrollX 7s linear infinite;
+  }
+
+  .skills-logo a {
+    margin: 0 2rem;
+  }
+
+  .skills-logo a svg {
+    height: 6rem;
+  }
+
+  /* -- SKILLS END -- */
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .intro {
+    padding: 0 3rem;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro h1 span {
+    font-size: 4rem;
+  }
+
+  .typing-container {
+    font-size: 2rem;
+  }
+
+  .input-cursor {
+    height: 2.5rem;
+  }
+
+  .profil-image {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes infinite-scrollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
