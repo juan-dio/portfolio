@@ -1,9 +1,19 @@
 :root {
-  --primary: #ff00ff;
+  --primary: #fd3db5;
+  /* --primary: #ff00ff; */
   /* --primary: #38bdf8; */
   --darker: #0f172a;
   --dark: #22252c;
   --text: #cccccc;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("Inter/Inter-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 600 700 900;
+  /* font-weight: lighter bold; */
+  font-display: swap;
 }
 
 html {
@@ -20,10 +30,6 @@ body {
   font-family: "Inter", sans-serif;
   color: white;
   background-color: var(--darker);
-}
-
-section {
-  padding-bottom: 3rem;
 }
 
 .container {
@@ -43,6 +49,19 @@ section {
   align-items: center;
 }
 
+.hidden {
+  opacity: 0;
+  transform: translateY(20%);
+  filter: blur(20%);
+  transition: all 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
 /* -- HEADER START -- */
 
 header {
@@ -50,6 +69,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999;
+  transition: all 0.25s;
 }
 
 .header-fixed {
@@ -155,7 +176,8 @@ header {
 /* -- DASHBOARD START -- */
 
 section#dashboard {
-  margin-top: 80px;
+  /* margin-top: 80px; */
+  padding: 4rem 0 0;
 }
 
 .intro {
@@ -205,11 +227,17 @@ section#dashboard {
 
 .intro a {
   display: inline-block;
-  background-color: #ff00ff;
-  color: white;
+  background-color: var(--primary);
+  color: var(--darker);
   padding: 0.75rem 1.75rem;
   border-radius: 1.5rem;
   text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s;
+}
+
+.intro a:hover {
+  filter: brightness(80%);
 }
 
 .profil-image {
@@ -241,6 +269,10 @@ section#dashboard {
 /* -- DASHBOARD END -- */
 
 /* -- ABOUT START -- */
+
+section#about {
+  padding: 5rem 0 3rem;
+}
 
 .title h4 {
   font-size: 1.2rem;
@@ -309,7 +341,7 @@ section#dashboard {
 /* -- SKILLS START -- */
 
 section#skills {
-  padding: 3rem 0;
+  padding: 3rem;
   background-color: var(--dark);
 }
 
@@ -324,18 +356,22 @@ section#skills .title h2 {
 
 .skills-logo-container {
   display: flex;
+  justify-content: center;
   padding: 1rem 0;
   overflow: hidden;
 }
 
-.skills-logo {
+/* .skills-logo {
   display: flex;
   flex-shrink: 0;
   animation: infinite-scrollX 7s linear infinite;
-}
+} */
 
-.skills-logo a {
-  margin: 0 1rem;
+.skills-logo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .skills-logo a svg {
@@ -344,16 +380,93 @@ section#skills .title h2 {
 
 /* -- SKILLS END -- */
 
+/* -- PROJECTS START -- */
+
+section#projects {
+  padding: 3rem 0;
+}
+
+section#projects .title {
+  text-align: center;
+}
+
+section#projects .title h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+section#projects .content {
+  padding: 1rem 0;
+}
+
+.project {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.project .card {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--dark);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.project .card:hover {
+  filter: brightness(120%) drop-shadow(0 0px 5px rgba(0, 0, 0, 0.5));
+  transition: all 0.5s linear;
+}
+
+.project .card .preview {
+  height: 10rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.project .card .preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project .card .title {
+  margin: 1rem 0;
+}
+
+.project .card .title h5 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.project .card .desc {
+  font-size: 0.9rem;
+}
+
+.project .card .desc p {
+  text-align: justify;
+  margin-bottom: 0.5rem;
+}
+
+/* -- PROJECTS END -- */
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .project {
+    width: 50%;
+    margin-bottom: 0;
+    padding: 0.5rem;
+  }
+
+  .project .card .preview {
+    height: 12rem;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  section {
-    padding-bottom: 4rem;
-  }
-
   .container {
     padding: 0 3rem;
   }
@@ -392,7 +505,7 @@ section#skills .title h2 {
   /* -- DASHBOARD START -- */
 
   section#dashboard {
-    margin-top: 100px;
+    padding: 5rem 0 0rem;
   }
 
   .box {
@@ -421,6 +534,10 @@ section#skills .title h2 {
 
   /* -- ABOUT START -- */
 
+  section#about {
+    padding: 5rem 0 4rem;
+  }
+
   .title {
     padding: 0 2rem;
   }
@@ -443,20 +560,26 @@ section#skills .title h2 {
   }
 
   .skills-logo {
-    display: flex;
-    flex-shrink: 0;
-    animation: infinite-scrollX 7s linear infinite;
-  }
-
-  .skills-logo a {
-    margin: 0 2rem;
+    gap: 3rem;
   }
 
   .skills-logo a svg {
-    height: 6rem;
+    height: 4rem;
   }
 
   /* -- SKILLS END -- */
+
+  /* -- PROJECTS START -- */
+
+  section#projects {
+    padding: 5rem 0;
+  }
+
+  section#projects .title h2 {
+    font-size: 3rem;
+  }
+
+  /* -- PROJECTS END -- */
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -485,6 +608,10 @@ section#skills .title h2 {
     width: 400px;
     height: 400px;
   }
+
+  .project {
+    width: 33.3333%;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -512,5 +639,18 @@ section#skills .title h2 {
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes popup {
+  from {
+    transform: translateY(25%);
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
   }
 }

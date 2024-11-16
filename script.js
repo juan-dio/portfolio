@@ -1,3 +1,18 @@
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry)
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+
+hiddenElements.forEach((el) => observer.observe(el))
+
 // NAVBAR
 window.onscroll = () => {
   const header = document.querySelector('header');
@@ -46,5 +61,5 @@ setInterval(() => {
 
 
 // SKILLS
-const logo = document.querySelector('.skills-logo').cloneNode(true);
-document.querySelector('.skills-logo-container').appendChild(logo);
+// const logo = document.querySelector('.skills-logo').cloneNode(true);
+// document.querySelector('.skills-logo-container').appendChild(logo);
