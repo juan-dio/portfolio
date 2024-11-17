@@ -2,16 +2,22 @@
   --primary: #fd3db5;
   /* --primary: #ff00ff; */
   /* --primary: #38bdf8; */
-  --darker: #0f172a;
-  --dark: #22252c;
-  --text: #cccccc;
+  --slate100: #f1f5f9;
+  --slate200: #e2e8f0;
+  --slate300: #cbd5e1;
+  --slate400: #94a3b8;
+  --slate500: #64748b;
+  --slate600: #475569;
+  --slate700: #334155;
+  --slate800: #1e293b;
+  --slate900: #0f172a;
 }
 
 @font-face {
   font-family: "Inter";
   src: url("Inter/Inter-VariableFont_opsz,wght.ttf")
     format("truetype-variations");
-  font-weight: 100 600 700 900;
+  font-weight: 100 900;
   /* font-weight: lighter bold; */
   font-display: swap;
 }
@@ -28,8 +34,8 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  color: white;
-  background-color: var(--darker);
+  color: var(--slate200);
+  background-color: var(--slate900);
 }
 
 .container {
@@ -51,15 +57,24 @@ body {
 
 .hidden {
   opacity: 0;
-  transform: translateY(20%);
+  scale: 0.9;
+  /* transform: translateY(20%); */
   filter: blur(20%);
   transition: all 1s ease;
 }
 
 .show {
   opacity: 1;
-  transform: translateY(0);
+  scale: 1;
+  /* transform: translateY(0); */
   filter: blur(0);
+}
+
+.show-up {
+  -webkit-animation: appear 0.5s linear;
+  animation: appear 0.5s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
 }
 
 /* -- HEADER START -- */
@@ -79,7 +94,7 @@ header {
 
 .navbar {
   padding: 1rem 3rem;
-  background-color: var(--darker);
+  background-color: var(--slate900);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -145,7 +160,7 @@ header {
   top: -200px;
   left: 0;
   width: 100%;
-  background-color: var(--dark);
+  background-color: var(--slate800);
   transition: all 0.25s ease-in-out;
   z-index: -999;
 }
@@ -202,7 +217,7 @@ section#dashboard {
   align-items: flex-end;
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--text);
+  color: var(--slate300);
   margin-bottom: 1rem;
 }
 
@@ -210,25 +225,25 @@ section#dashboard {
   display: inline-block;
   width: 2px;
   height: 1.7rem;
-  background-color: white;
+  background-color: var(--slate200);
   margin-left: 4px;
   animation: blink 0.5s linear infinite alternate;
   z-index: -1;
 }
 
 .intro p {
-  color: var(--text);
+  color: var(--slate300);
   margin-bottom: 1rem;
 }
 
 .intro p span {
-  color: white;
+  color: var(--slate300);
 }
 
 .intro a {
   display: inline-block;
   background-color: var(--primary);
-  color: var(--darker);
+  color: var(--slate900);
   padding: 0.75rem 1.75rem;
   border-radius: 1.5rem;
   text-decoration: none;
@@ -246,7 +261,7 @@ section#dashboard {
   margin: 2rem 0;
   overflow: hidden;
   border-radius: 50%;
-  border: 10px solid var(--dark);
+  border: 10px solid var(--slate800);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
 }
 
@@ -271,7 +286,7 @@ section#dashboard {
 /* -- ABOUT START -- */
 
 section#about {
-  padding: 5rem 0 3rem;
+  padding: 5rem 0;
 }
 
 .title h4 {
@@ -294,7 +309,7 @@ section#about {
 .about p,
 .connect p {
   font-weight: 300;
-  color: var(--text);
+  color: var(--slate400);
 }
 
 .connect {
@@ -322,18 +337,18 @@ section#about {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid var(--text);
+  border: 2px solid var(--slate300);
   border-radius: 50%;
+  transition: all 0.25s;
 }
 
 .social-icon a:hover {
   border: 2px solid var(--primary);
   background-color: var(--primary);
-  transition: all 0.25s;
 }
 
 .social-icon a svg {
-  fill: var(--text);
+  fill: var(--slate300);
 }
 
 /* -- ABOUT END -- */
@@ -341,8 +356,8 @@ section#about {
 /* -- SKILLS START -- */
 
 section#skills {
-  padding: 3rem;
-  background-color: var(--dark);
+  padding: 5rem 3rem;
+  background-color: var(--slate800);
 }
 
 section#skills .title {
@@ -376,14 +391,20 @@ section#skills .title h2 {
 
 .skills-logo a svg {
   height: 3rem;
+  filter: grayscale(1);
+  transition: all 0.25s;
 }
 
+.skills-logo a:hover svg {
+  filter: grayscale(0);
+}
 /* -- SKILLS END -- */
 
 /* -- PROJECTS START -- */
 
 section#projects {
-  padding: 3rem 0;
+  background-color: var(--slate300);
+  padding: 5rem 0;
 }
 
 section#projects .title {
@@ -391,6 +412,7 @@ section#projects .title {
 }
 
 section#projects .title h2 {
+  color: var(--slate900);
   font-size: 2rem;
   margin-bottom: 2rem;
 }
@@ -408,20 +430,21 @@ section#projects .content {
   display: block;
   width: 100%;
   padding: 1rem;
-  background-color: var(--dark);
-  border-radius: 1rem;
+  background-color: var(--slate800);
+  border-radius: 0.8rem;
   text-decoration: none;
-  color: var(--text);
+  transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
 }
 
 .project .card:hover {
-  filter: brightness(120%) drop-shadow(0 0px 5px rgba(0, 0, 0, 0.5));
-  transition: all 0.5s linear;
+  transform: translateY(-5px);
+  filter: brightness(120%) drop-shadow(0 10px 5px rgba(0, 0, 0, 0.5));
 }
 
 .project .card .preview {
   height: 10rem;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   overflow: hidden;
 }
 
@@ -437,11 +460,14 @@ section#projects .content {
 }
 
 .project .card .title h5 {
-  font-size: 1rem;
+  color: var(--slate200);
+  text-align: left;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
 .project .card .desc {
+  color: var(--slate400);
   font-size: 0.9rem;
 }
 
@@ -457,7 +483,7 @@ section#projects .content {
   .project {
     width: 50%;
     margin-bottom: 0;
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   .project .card .preview {
@@ -472,6 +498,10 @@ section#projects .content {
   }
 
   /* -- HEADER START -- */
+
+  .navbar {
+    padding: 1rem 5rem;
+  }
 
   .navbar button {
     display: none;
@@ -535,7 +565,7 @@ section#projects .content {
   /* -- ABOUT START -- */
 
   section#about {
-    padding: 5rem 0 4rem;
+    padding: 8rem 0;
   }
 
   .title {
@@ -552,7 +582,7 @@ section#projects .content {
   /* -- SKILLS START -- */
 
   section#skills {
-    padding: 5rem 0;
+    padding: 8rem 3rem;
   }
 
   section#skills .title h2 {
@@ -572,11 +602,15 @@ section#projects .content {
   /* -- PROJECTS START -- */
 
   section#projects {
-    padding: 5rem 0;
+    padding: 8rem 0;
   }
 
   section#projects .title h2 {
     font-size: 3rem;
+  }
+
+  .project .card .title {
+    padding: 0;
   }
 
   /* -- PROJECTS END -- */
@@ -651,6 +685,19 @@ section#projects .content {
   to {
     transform: translateY(0);
     opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.9;
+    filter: blur(20%);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
     filter: blur(0);
   }
 }
