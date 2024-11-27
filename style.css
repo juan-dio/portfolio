@@ -328,12 +328,14 @@ section#about {
 .social-icon {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .social-icon a {
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
