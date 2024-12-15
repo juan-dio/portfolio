@@ -74,7 +74,7 @@ body {
   -webkit-animation: appear 0.5s linear;
   animation: appear 0.5s linear;
   animation-timeline: view();
-  animation-range: entry 0% cover 20%;
+  animation-range: entry 0% cover 30%;
 }
 
 /* -- HEADER START -- */
@@ -441,7 +441,8 @@ section#projects .content {
 
 .project .card:hover {
   transform: translateY(-5px);
-  filter: brightness(120%) drop-shadow(0 10px 5px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.5));
+  background-color: var(--slate700);
 }
 
 .project .card .preview {
@@ -480,12 +481,89 @@ section#projects .content {
 
 /* -- PROJECTS END -- */
 
+/* -- FOOTER START -- */
+
+footer {
+  background-color: var(--slate900);
+  padding: 3rem 0;
+}
+
+.footer .content {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.footer h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.footer h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.footer p {
+  font-weight: 300;
+  color: var(--slate300);
+  margin-bottom: 0.25rem;
+}
+
+.footer .sec {
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.footer .sec ul {
+  list-style: none;
+}
+
+.footer .sec ul li a {
+  color: var(--slate300);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.copyright {
+  padding: 3rem 0 0;
+  border-top: 1px solid var(--slate400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copyright p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--slate400);
+  text-align: center;
+}
+
+.copyright p a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* -- FOOTER END -- */
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .project {
     width: 50%;
     margin-bottom: 0;
     padding: 1rem;
+  }
+
+  .project .card {
+    height: 32rem;
   }
 
   .project .card .preview {
@@ -616,6 +694,27 @@ section#projects .content {
   }
 
   /* -- PROJECTS END -- */
+
+  /* -- FOOTER START -- */
+
+  footer {
+    padding: 5rem 0 3rem;
+  }
+
+  .footer .container {
+    padding: 0 3rem;
+  }
+
+  .footer .content {
+    margin-bottom: 0;
+  }
+
+  .footer .sec {
+    width: 30%;
+    margin-bottom: 5rem;
+  }
+
+  /* -- FOOTER END -- */
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

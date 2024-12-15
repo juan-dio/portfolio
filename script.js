@@ -36,7 +36,7 @@ navBtn.addEventListener('click', () => {
 // DASHBOARD
 const sentence = document.querySelector('#sentence');
 
-const text = ["Informatics Engineering", "Software Engineer"];
+const text = ["Informatics Engineering", "Software Developer", "Web Developer"];
 let i = 0;
 let j = 0;
 
