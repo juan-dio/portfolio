@@ -93,7 +93,8 @@ header {
 }
 
 .navbar {
-  padding: 1rem 3rem;
+  height: 72px;
+  padding: 0 3rem;
   background-color: var(--slate900);
   display: flex;
   justify-content: space-between;
@@ -166,7 +167,7 @@ header {
 }
 
 .navbar nav.active {
-  top: 71px;
+  top: 72px;
   z-index: 9;
 }
 
@@ -268,6 +269,8 @@ section#dashboard {
 .profil-image img {
   width: 100%;
   object-fit: cover;
+  /* object-position: center; */
+  transform: scale(1.25);
   position: relative;
   top: -60px;
   z-index: -1;
@@ -517,15 +520,21 @@ footer {
   margin-bottom: 2rem;
 }
 
+.footer .sec p a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
 .footer .sec ul {
   list-style: none;
 }
 
 .footer .sec ul li a {
-  color: var(--slate300);
+  color: var(--primary);
   text-decoration: none;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   display: block;
   margin-bottom: 0.5rem;
 }
