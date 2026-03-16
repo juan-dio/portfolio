@@ -1,4 +1,5 @@
 // Navbar
+
 const navbarContainer = document.querySelector('.navbar .container');
 const navbarItems = document.querySelector('.navbar .container .items');
 const navBtn = document.querySelector('#nav-btn');
@@ -10,14 +11,17 @@ const fixedNav = header.offsetTop;
 window.addEventListener('scroll', () => {
   if (window.scrollY > fixedNav) {
     navbarContainer.classList.add('border');
+    navbarItems.classList.add('border');
   } else {
     navbarContainer.classList.remove('border');
+    navbarItems.classList.remove('border');
   }
 });
 
 navBtn.addEventListener('click', () => {
   nav.classList.toggle('active');
   hamburgerMenu.classList.toggle('active');
+  navbarItems.classList.toggle('bordernav');
 });
 
 // Scroll Section
@@ -49,32 +53,34 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// DASHBOARD
-// const sentence = document.querySelector('#sentence');
+// Dashboard
 
-// const text = ["Informatics Engineering", "Software Developer", "Web Developer"];
-// let i = 0;
-// let j = 0;
+const sentence = document.querySelector('#sentence');
+const inputCursor = document.querySelector('.input-cursor');
 
-// setInterval(() => {
-//   if (j < text[i].length) {
-//     sentence.innerHTML += text[i].charAt(j);
-//     j++;
-//     if (j == text[i].length) {
-//       setTimeout(() => {
-//         sentence.innerHTML = '';
-//         setTimeout(() => {
-//           j = 0;
-//           i++;
-//           if (i == text.length) {
-//             i = 0;
-//           }
-//         }, 1500)
-//       }, 1500);
-//     }
-//   }
-// }, 200);
-
+const text = ["Software Developer", "Web Developer", "Backend Developer", "Frontend Developer", "Fullstack Developer", "UI/UX Designer"];
+let i = 0;
+let j = 0;
+setInterval(() => {
+  if (j < text[i].length) {
+    sentence.innerHTML += text[i].charAt(j);
+    j++;
+    if (j == text[i].length) {
+      inputCursor.classList.add('blinking');
+      setTimeout(() => {
+        sentence.innerHTML = '';
+        setTimeout(() => {
+          inputCursor.classList.remove('blinking');
+          j = 0;
+          i++;
+          if (i == text.length) {
+            i = 0;
+          }
+        }, 1500);
+      }, 3000);
+    }
+  }
+}, 200);
 
 // SKILLS
 // const logo = document.querySelector('.skills-logo').cloneNode(true);

@@ -141,7 +141,7 @@ ol {
   position: relative;
 }
 
-.navbar .container .items::after {
+.navbar .container .items.border::after {
   content: "";
   position: absolute;
   left: 0;
@@ -149,7 +149,18 @@ ol {
   bottom: 0;
   height: 1px;
   background-color: var(--gray);
-  transition: all 3s ease;
+  transition: all 0.3s ease;
+}
+
+.navbar .container .items.bordernav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--gray);
+  transition: all 0.3s ease;
 }
 
 .navbar .logo {
@@ -331,8 +342,27 @@ section#dashboard {
   color: var(--primary);
 }
 
-#dashboard .content .item .intro p {
+.typing-container {
+  display: flex;
+  align-items: center;
   font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.typing-container .sentence {
+  margin-left: 0.375rem;
+}
+
+.input-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.5rem;
+  margin-left: 0.125rem;
+  background-color: var(--dark);
+}
+
+.input-cursor.blinking {
+  animation: blink 0.5s linear infinite alternate;
 }
 
 #dashboard .content .item .button {
@@ -344,6 +374,9 @@ section#dashboard {
   font-size: 1rem;
   font-weight: 400;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
 }
 
 #dashboard .content .item .button:hover {
@@ -769,6 +802,21 @@ section#projects {
   }
 }
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   /* === NAVBAR === */
@@ -793,9 +841,14 @@ section#projects {
     bottom: 0;
     height: 1px;
     background-color: var(--gray);
+    transition: all 0.3s ease;
   }
 
-  .navbar .container .items::after {
+  .navbar .container .items.border::after {
+    display: none;
+  }
+
+  .navbar .container .items.bordernav::after {
     display: none;
   }
 
