@@ -73,15 +73,56 @@ setInterval(() => {
           inputCursor.classList.remove('blinking');
           j = 0;
           i++;
-          if (i == text.length) {
-            i = 0;
-          }
+          if (i == text.length) i = 0;
         }, 1500);
       }, 3000);
     }
   }
 }, 200);
 
-// SKILLS
-// const logo = document.querySelector('.skills-logo').cloneNode(true);
-// document.querySelector('.skills-logo-container').appendChild(logo);
+// Music
+const audio = document.querySelector('#background-music');
+const playBtn = document.querySelector('.music-toggle');
+const musicOnIcon = document.querySelector('#music-on');
+const musicOffIcon = document.querySelector('#music-off');
+const songTitleContainer = document.querySelector('.song-title-container');
+const songTitle = document.querySelector('.song-title');
+
+const directory = 'assets/musics/';
+const playlist = ['Paramore - The Only Exception', 'Galileo Galilei - Aoi Shiori', 'Sukima Switch - Line'];
+let currentTrack = 0;
+
+function showSongTitle(title) {
+  songTitle.innerHTML = `Now playing <span class="title">${title}</span>`;
+  songTitleContainer.classList.add('show');
+  setTimeout(() => {
+    songTitleContainer.classList.remove('show');
+  }, 10000);
+}
+
+audio.src = directory + playlist[currentTrack] + '.mp3';
+audio.type = 'audio/mpeg';
+audio.volume = 0.5;
+
+showSongTitle(playlist[currentTrack]);
+
+playBtn.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    showSongTitle(playlist[currentTrack]);
+    musicOnIcon.style.display = 'block';
+    musicOffIcon.style.display = 'none';
+  } else {
+    audio.pause();
+    musicOnIcon.style.display = 'none';
+    musicOffIcon.style.display = 'block';
+  }
+});
+
+audio.addEventListener('ended', function () {
+  currentTrack++;
+  if (currentTrack >= playlist.length) currentTrack = 0;
+  audio.src = directory + playlist[currentTrack] + '.mp3';
+  audio.play();
+  showSongTitle(playlist[currentTrack]);
+});

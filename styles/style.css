@@ -764,6 +764,79 @@ section#projects {
   color: var(--light);
 }
 
+/* === MUSIC === */
+.music-toggle {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 1.5rem;
+  width: fit-content;
+  padding: 0.75rem;
+  border-radius: 2.5rem;
+  background-color: var(--white);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.music-toggle:hover {
+  background-color: var(--secondary);
+}
+
+.music-toggle .song-title-container {
+  width: 0;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.6s ease-in-out;
+}
+
+.music-toggle .song-title-container.show {
+  width: 12rem;
+  margin: 0 0.5rem;
+}
+
+.music-toggle .song-title-container .song-title {
+  display: inline-block;
+  padding-left: 100%;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: left;
+  color: var(--dark);
+  transition: all 0.3s ease;
+}
+
+.music-toggle .song-title-container .song-title .title {
+  font-weight: 600;
+}
+
+.music-toggle .song-title-container.show .song-title {
+  animation: infiniteScrollX 5s linear infinite;
+}
+
+.music-toggle:hover .song-title-container.show .song-title {
+  color: var(--white);
+}
+
+.music-toggle svg path {
+  fill: var(--dark);
+  transition: fill 0.3s ease;
+}
+
+.music-toggle:hover svg path {
+  fill: var(--white);
+}
+
+#music-on {
+  display: none;
+}
+
+#music-off {
+  display: block;
+}
+
 /* === ANIMATION === */
 
 .appear {
@@ -780,40 +853,12 @@ section#projects {
   animation-range: entry 60% cover 100%;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    filter: blur(20%);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-@keyframes disappear {
-  from {
-    opacity: 1;
-    filter: blur(0);
-  }
-  to {
-    opacity: 0;
-    filter: blur(20%);
-  }
-}
-
-@keyframes blink {
+@keyframes infiniteScrollX {
   0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
+    transform: translateX(0);
   }
   100% {
-    opacity: 0;
+    transform: translateX(-100%);
   }
 }
 
@@ -974,6 +1019,12 @@ section#projects {
     flex-direction: row;
     justify-content: center;
   }
+
+  /* === MUSIC === */
+
+  .music-toggle {
+    right: 3rem;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1280px and up) */
@@ -1048,5 +1099,50 @@ section#projects {
 
   .links-contact {
     gap: 5.5rem;
+  }
+
+  /* === MUSIC === */
+
+  .music-toggle {
+    right: 5rem;
+  }
+}
+
+/* === KEYFRAMES === */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    filter: blur(20%);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(20%);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
