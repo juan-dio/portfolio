@@ -80,7 +80,26 @@ setInterval(() => {
   }
 }, 200);
 
+// CV Modal
+
+const cvBtn = document.querySelector('#cv-btn');
+const cvSection = document.querySelector('#cv-modal');
+const cvCloseBtn = document.querySelector('#close-cv-modal-btn');
+
+cvBtn.addEventListener('click', () => {
+  cvSection.style.display = 'block';
+  // Disable scrolling when CV modal is open
+  document.body.style.overflow = 'hidden';
+});
+
+cvCloseBtn.addEventListener('click', () => {
+  cvSection.style.display = 'none';
+  // Enable scrolling when CV modal is closed
+  document.body.style.overflow = 'auto';
+});
+
 // Music
+
 const audio = document.querySelector('#background-music');
 const playBtn = document.querySelector('.music-toggle');
 const musicOnIcon = document.querySelector('#music-on');
