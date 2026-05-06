@@ -2,8 +2,8 @@
   --primary: #913175;
   --secondary: #cd5888;
   --dark: #20262e;
-  /* --light: #e9e8e8; */
-  --light: #f1f5f9;
+  /* --light: #f1f5f9; */
+  --light: #f8fafc;
   --white: #ffffff;
   --black: #000000;
   /* --gray: #b9b8b8; */
@@ -114,6 +114,13 @@ ol {
   font-size: 1.5rem;
 }
 
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+
 .text-xl {
   font-size: 2rem;
 }
@@ -181,13 +188,15 @@ ol {
   height: 2.25rem;
   border-radius: 50%;
   background-color: var(--white);
-  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.125);
+  /* border: 1px solid var(--gray); */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .navbar .nav-btn:hover {
-  background-color: var(--secondary);
+  /* border: 1px solid var(--primary); */
+  background-color: var(--primary);
 }
 
 .navbar .nav-btn .hamburger-menu {
@@ -271,6 +280,7 @@ ol {
 
 .navbar nav ul li a.active {
   color: var(--primary);
+  /* text-decoration: underline; */
 }
 
 .navbar nav ul li a::after {
@@ -290,12 +300,9 @@ section#dashboard {
   background-color: var(--light);
 }
 
-.container {
-  padding: 4.5rem 1.5rem;
-}
-
 #dashboard .container {
-  padding: 3.5rem 1.5rem 8rem;
+  padding-top: 3.5rem;
+  padding-bottom: 6rem;
 }
 
 .content {
@@ -317,7 +324,7 @@ section#dashboard {
 .row-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .row-content .title {
@@ -341,6 +348,11 @@ section#dashboard {
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--primary);
+}
+
+#dashboard .content .item .intro h2 #name {
+  font-size: 3rem;
+  font-weight: 600;
 }
 
 .typing-container {
@@ -368,9 +380,9 @@ section#dashboard {
 
 #dashboard .content .item .button {
   width: fit-content;
-  padding: 1rem 1.5rem;
+  padding: 1rem 3rem;
   border-radius: 3.5rem;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: var(--white);
   font-size: 1rem;
   font-weight: 400;
@@ -437,8 +449,8 @@ section#about {
 }
 
 .social-icon a:hover {
-  border: 2px solid var(--secondary);
-  background-color: var(--secondary);
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
 }
 
 .social-icon a svg {
@@ -481,7 +493,7 @@ section#experience {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 
 .experience .pointer .line {
@@ -497,7 +509,7 @@ section#experience {
   gap: 0.125rem;
 }
 
-.experience .company h4 {
+.experience .company h3 {
   font-size: 1.25rem;
   font-weight: 600;
 }
@@ -513,7 +525,7 @@ section#experience {
   padding-bottom: 2rem;
 }
 
-.experience .desc h5 {
+.experience .desc h4 {
   font-size: 1.125rem;
   font-weight: 500;
 }
@@ -574,7 +586,7 @@ section#projects {
 }
 
 .project {
-  width: 22.5rem;
+  width: 26rem;
 }
 
 .project .picture {
@@ -634,19 +646,40 @@ section#projects {
   border-top: 1px solid var(--gray);
 }
 
-.project .nav a {
-  padding: 0.5rem 1.5rem;
+.project .nav .project-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project .nav .project-link a {
+  width: 5.5rem;
+  padding: 0.5rem;
   border-radius: 0.75rem;
   border: 1px solid var(--gray);
   background-color: var(--white);
-  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--dark);
   transition: all 0.3s ease;
 }
 
-.project .nav a:hover {
+.project .nav .project-link a.repo {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.project .nav .project-link a:hover {
   filter: brightness(0.9);
+}
+
+.project .nav .project-link a.disabled {
+  filter: opacity(0.75);
 }
 
 .project .nav .category {
@@ -656,7 +689,7 @@ section#projects {
 }
 
 .project .nav .category p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 
@@ -704,7 +737,7 @@ section#projects {
 }
 
 .footer .farewell .social-icon a:hover {
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--primary);
 }
 
 .footer .farewell .social-icon a svg {
@@ -736,10 +769,19 @@ section#projects {
   color: var(--light);
 }
 
-.links-contact .links ul {
+.links-contact .links ul li {
+  margin-bottom: 0.25rem;
+}
+
+.links-contact .links ul li a {
   font-size: 0.875rem;
   font-weight: 300;
   color: var(--light);
+  transition: all 0.3s ease;
+}
+
+.links-contact .links ul li a:hover {
+  color: var(--primary);
 }
 
 .links-contact .contact ul {
@@ -812,7 +854,7 @@ section#cv-modal {
   width: 100%;
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: var(--white);
   font-size: 1rem;
   font-weight: 400;
@@ -844,7 +886,8 @@ section#cv-modal {
   padding: 0.75rem;
   border-radius: 2.5rem;
   background-color: var(--white);
-  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  /* border: 1px solid var(--gray); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -853,7 +896,8 @@ section#cv-modal {
 }
 
 .music-toggle:hover {
-  background-color: var(--secondary);
+  /* border: 1px solid var(--primary); */
+  background-color: var(--primary);
 }
 
 .music-toggle .song-title-container {
@@ -935,17 +979,17 @@ section#cv-modal {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  /* === NAVBAR === */
-
-  .navbar {
-    padding: 0 3rem;
+  .container {
+    padding: 4.5rem 3rem;
   }
+
+  /* === NAVBAR === */
 
   .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding: 0 3rem;
     position: relative;
   }
 
@@ -956,6 +1000,7 @@ section#cv-modal {
     right: 0;
     bottom: 0;
     height: 1px;
+    margin: 0 3rem;
     background-color: var(--gray);
     transition: all 0.3s ease;
   }
@@ -997,11 +1042,11 @@ section#cv-modal {
     display: none;
   }
 
-  .navbar nav ul li a.active {
+  /* .navbar nav ul li a.active {
     transform: scale(1.125);
-  }
+  } */
 
-  .navbar nav ul li a.active::before {
+  /* .navbar nav ul li a.active::before {
     content: "";
     position: absolute;
     left: -0.75rem;
@@ -1009,13 +1054,9 @@ section#cv-modal {
     height: 0.5rem;
     background-color: var(--primary);
     border-radius: 50%;
-  }
+  } */
 
   /* === DASHBOARD === */
-
-  .container {
-    padding: 4.5rem 3rem;
-  }
 
   .content {
     flex-direction: row;
@@ -1025,10 +1066,6 @@ section#cv-modal {
 
   .content .item {
     width: 50%;
-  }
-
-  #dashboard .container {
-    padding: 3.5rem 3rem 8rem;
   }
 
   #dashboard .content .item img {
@@ -1067,17 +1104,17 @@ section#cv-modal {
 
   /* === PROJECTS === */
 
-  .projects {
+  /* .projects {
     grid-template-columns: repeat(2, 1fr);
-  }
+  } */
 
-  .project .bottom {
+  /* .project .bottom {
     height: 23rem;
   }
 
   .project .desc h4 {
     height: 3.5rem;
-  }
+  } */
 
   /* === FOOTER === */
 
@@ -1100,11 +1137,11 @@ section#cv-modal {
 
 /* Extra large devices (large laptops and desktops, 1280px and up) */
 @media only screen and (min-width: 1280px) {
-  /* === NAVBAR === */
-
-  .navbar {
-    padding: 0 5rem;
+  .container {
+    padding: 6rem 3rem;
   }
+
+  /* === NAVBAR === */
 
   .navbar .container > * {
     width: 100%;
@@ -1116,23 +1153,15 @@ section#cv-modal {
 
   /* === DASHBOARD === */
 
-  .container {
-    padding: 8rem 5rem;
-  }
-
-  #dashboard .container {
-    padding: 4rem 9rem 6rem;
-  }
-
   #dashboard .content .item img {
     width: 26.5rem;
   }
 
   /* === ABOUT === */
 
-  #about .container {
-    padding: 8rem 9rem;
-  }
+  /* #about .container {
+    padding: 6rem 1.5rem;
+  } */
 
   #about .content {
     gap: 4rem;
@@ -1147,7 +1176,7 @@ section#cv-modal {
   /* === SKILLS === */
 
   .skills {
-    grid-template-columns: repeat(10, 1fr);
+    /* grid-template-columns: repeat(10, 1fr); */
     gap: 2.5rem;
   }
 
@@ -1158,8 +1187,16 @@ section#cv-modal {
   /* === PROJECTS === */
 
   .projects {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  .project .bottom {
+    height: 20rem;
+  }
+
+  .project .desc h4 {
+    height: 3.5rem;
   }
 
   /* === FOOTER === */
