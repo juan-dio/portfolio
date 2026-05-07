@@ -586,7 +586,8 @@ section#projects {
 }
 
 .project {
-  width: 26rem;
+  width: 100%;
+  max-width: 30rem;
 }
 
 .project .picture {
@@ -1192,12 +1193,12 @@ section#cv-modal {
   }
 
   .project .bottom {
-    height: 20rem;
+    height: 16rem;
   }
 
-  .project .desc h4 {
+  /* .project .desc h4 {
     height: 3.5rem;
-  }
+  } */
 
   /* === FOOTER === */
 
