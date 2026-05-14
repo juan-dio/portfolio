@@ -106,22 +106,49 @@ const musicOnIcon = document.querySelector('#music-on');
 const musicOffIcon = document.querySelector('#music-off');
 const songTitleContainer = document.querySelector('.song-title-container');
 const songTitle = document.querySelector('.song-title');
+let songTitleTimeout = null;
 
 const directory = 'assets/musics/';
 const playlist = ['Paramore - The Only Exception', 'Galileo Galilei - Aoi Shiori', 'Sukima Switch - Line'];
 let currentTrack = 0;
 
 function showSongTitle(title) {
+  if (!songTitleContainer || !songTitle) return;
+
+  // clear any previous hide timer
+  if (songTitleTimeout) {
+    clearTimeout(songTitleTimeout);
+    songTitleTimeout = null;
+  }
+
   songTitle.innerHTML = `Now playing <span class="title">${title}</span>`;
-  songTitleContainer.classList.add('show');
-  setTimeout(() => {
+
+  // Jika animasi sudah ditampilkan, jangan restart - biarkan terus berjalan
+  if (!songTitleContainer.classList.contains('show')) {
+    songTitleContainer.classList.add('show');
+  }
+
+  // Hide after 10s unless reset by another call
+  songTitleTimeout = setTimeout(() => {
     songTitleContainer.classList.remove('show');
+    songTitleTimeout = null;
   }, 10000);
 }
 
 audio.src = directory + playlist[currentTrack] + '.mp3';
 audio.type = 'audio/mpeg';
 audio.volume = 0.5;
+
+// Ensure icons reflect initial playback state
+if (musicOnIcon && musicOffIcon) {
+  if (audio.paused) {
+    musicOnIcon.style.display = 'none';
+    musicOffIcon.style.display = 'block';
+  } else {
+    musicOnIcon.style.display = 'block';
+    musicOffIcon.style.display = 'none';
+  }
+}
 
 showSongTitle(playlist[currentTrack]);
 
@@ -133,8 +160,17 @@ playBtn.addEventListener('click', () => {
     musicOffIcon.style.display = 'none';
   } else {
     audio.pause();
-    musicOnIcon.style.display = 'none';
-    musicOffIcon.style.display = 'block';
+    // hide title immediately when pausing and clear timer
+    if (songTitleTimeout) {
+      clearTimeout(songTitleTimeout);
+      songTitleTimeout = null;
+    }
+    // Shrink container while animation keeps running
+    if (songTitleContainer) songTitleContainer.classList.remove('show');
+    if (musicOnIcon && musicOffIcon) {
+      musicOnIcon.style.display = 'none';
+      musicOffIcon.style.display = 'block';
+    }
   }
 });
 
