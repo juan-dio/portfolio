@@ -1,0 +1,81 @@
+﻿/* === EXPERIENCE === */
+
+section#experience {
+  background-color: var(--light);
+}
+
+#experience .row-content {
+  gap: 0;
+}
+
+#experience .row-content > .title {
+  margin-bottom: 3rem;
+}
+
+.experience {
+  display: grid;
+  grid-template-areas:
+    "pointer company"
+    "pointer desc";
+}
+
+.experience .pointer {
+  grid-area: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 0.75rem;
+}
+
+.experience .pointer .ellipse-border {
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 1px dashed var(--dark);
+  width: fit-content;
+}
+
+.experience .pointer .ellipse {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+.experience .pointer .line {
+  width: 0;
+  height: 100%;
+  border-right: 1px dashed var(--dark);
+}
+
+.experience .company {
+  grid-area: company;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.experience .company h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.experience .company p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.experience .desc {
+  grid-area: desc;
+  padding-top: 0.75rem;
+  padding-bottom: 2rem;
+}
+
+.experience .desc h4 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.experience .desc p {
+  font-size: 0.875rem;
+  font-weight: 300;
+}

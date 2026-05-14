@@ -1,0 +1,32 @@
+﻿/* === SKILLS === */
+
+section#skills {
+  background-color: var(--white);
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.skills .skill a {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.skills .skill svg {
+  height: 3.5rem;
+  filter: grayscale(1);
+  transition: all 0.3s;
+}
+
+.skills .skill a:hover svg {
+  filter: grayscale(0);
+}

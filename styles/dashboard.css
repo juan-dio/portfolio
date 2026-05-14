@@ -1,0 +1,107 @@
+﻿/* === DASHBOARD === */
+
+section#dashboard {
+  margin-top: 4.5rem;
+  background-color: var(--light);
+}
+
+#dashboard .container {
+  padding-top: 3.5rem;
+  padding-bottom: 6rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#dashboard .content {
+  gap: 3.5rem;
+}
+
+.content .item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.row-content .title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+}
+
+#dashboard .content .item {
+  gap: 1.5rem;
+}
+
+#dashboard .content .item .intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+#dashboard .content .item .intro h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+#dashboard .content .item .intro h2 #name {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.typing-container {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.typing-container .sentence {
+  margin-left: 0.375rem;
+}
+
+.input-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.5rem;
+  margin-left: 0.125rem;
+  background-color: var(--dark);
+}
+
+.input-cursor.blinking {
+  animation: blink 0.5s linear infinite alternate;
+}
+
+#dashboard .content .item .button {
+  width: fit-content;
+  padding: 1rem 3rem;
+  border-radius: 3.5rem;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+#dashboard .content .item .button:hover {
+  filter: brightness(0.75);
+}
+
+#dashboard .content .item img {
+  width: 22rem;
+  margin: 0 auto;
+}

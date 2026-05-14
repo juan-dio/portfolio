@@ -1,0 +1,204 @@
+﻿/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 4.5rem 3rem;
+  }
+
+  /* === NAVBAR === */
+
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    position: relative;
+  }
+
+  .navbar .container.border::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    margin: 0 3rem;
+    background-color: var(--gray);
+    transition: all 0.3s ease;
+  }
+
+  .navbar .container .items.border::after,
+  .navbar .container .items.bordernav::after {
+    display: none;
+  }
+
+  .navbar .nav-btn {
+    display: none;
+  }
+
+  .navbar nav {
+    display: block;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    z-index: 0;
+  }
+
+  .navbar nav::after {
+    display: none;
+  }
+
+  .navbar nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbar nav ul li a {
+    padding: 0;
+  }
+
+  .navbar nav ul li a::after {
+    display: none;
+  }
+
+  /* === DASHBOARD === */
+
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content .item {
+    width: 50%;
+  }
+
+  #dashboard .content .item img {
+    width: 24rem;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  /* === EXPERIENCE === */
+
+  .experience {
+    grid-template-areas: "company pointer desc";
+  }
+
+  .experience .pointer {
+    padding: 0 1rem;
+  }
+
+  .experience .company {
+    width: 16.5rem;
+    gap: 0.5rem;
+  }
+
+  .experience .desc {
+    grid-area: desc;
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+  }
+
+  /* === SKILLS === */
+
+  .skills {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2rem;
+  }
+
+  /* === PROJECTS === */
+
+  /* === FOOTER === */
+
+  .footer .container .content {
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+  }
+
+  .links-contact {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* === MUSIC === */
+
+  .music-toggle {
+    right: 3rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1280px and up) */
+@media only screen and (min-width: 1280px) {
+  .container {
+    padding: 6rem 3rem;
+  }
+
+  /* === NAVBAR === */
+
+  .navbar .container > * {
+    width: 100%;
+  }
+
+  .navbar nav ul {
+    justify-content: space-between;
+  }
+
+  /* === DASHBOARD === */
+
+  #dashboard .content .item img {
+    width: 26.5rem;
+  }
+
+  /* === ABOUT === */
+
+  #about .content {
+    gap: 4rem;
+  }
+
+  /* === EXPERIENCE === */
+
+  .experience .company {
+    width: 25rem;
+  }
+
+  /* === SKILLS === */
+
+  .skills {
+    gap: 2.5rem;
+  }
+
+  .skills .skill svg {
+    height: 4.5rem;
+  }
+
+  /* === PROJECTS === */
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project .bottom {
+    height: 16rem;
+  }
+
+  /* .project .desc h4 {
+    height: 3.5rem;
+  } */
+
+  /* === FOOTER === */
+
+  .footer .container .content {
+    gap: 5.5rem;
+  }
+
+  .links-contact {
+    gap: 5.5rem;
+  }
+
+  /* === MUSIC === */
+
+  .music-toggle {
+    right: 5rem;
+  }
+}

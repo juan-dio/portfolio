@@ -1,0 +1,113 @@
+﻿/* === FOOTER === */
+
+.footer {
+  background-color: var(--dark);
+}
+
+.footer .container {
+  padding-top: 4.5rem;
+  padding-bottom: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer .container .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.farewell {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.farewell h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--light);
+}
+
+.farewell p {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--light);
+}
+
+.footer .farewell .social-icon a {
+  border: 2px solid var(--light);
+}
+
+.footer .farewell .social-icon a:hover {
+  border: 2px solid var(--primary);
+}
+
+.footer .farewell .social-icon a svg {
+  fill: var(--light);
+}
+
+.footer .farewell .social-icon a:hover svg {
+  fill: var(--white);
+}
+
+.links-contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.links-contact .links,
+.links-contact .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.links-contact .links h4,
+.links-contact .contact h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--light);
+}
+
+.links-contact .links ul li {
+  margin-bottom: 0.25rem;
+}
+
+.links-contact .links ul li a {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--light);
+  transition: all 0.3s ease;
+}
+
+.links-contact .links ul li a:hover {
+  color: var(--primary);
+}
+
+.links-contact .contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.links-contact .contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--light);
+}
+
+.footer .container .copyright {
+  padding-top: 1rem;
+  border-top: 1px solid var(--light);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--light);
+}

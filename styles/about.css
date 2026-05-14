@@ -1,0 +1,59 @@
+﻿/* === ABOUT === */
+
+section#about {
+  background-color: var(--white);
+}
+
+#about .content {
+  gap: 2rem;
+}
+
+#about .content .item.intro {
+  gap: 0.25rem;
+}
+
+#about .content .item.link {
+  gap: 1rem;
+}
+
+#about .content .item h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+#about .content .item p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.social-icon a {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--dark);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-icon a:hover {
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+}
+
+.social-icon a svg {
+  fill: var(--dark);
+}
+
+.social-icon a:hover svg {
+  fill: var(--white);
+}
