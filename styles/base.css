@@ -93,3 +93,16 @@ ol {
   margin: 0 auto;
   padding: 4.5rem 1.5rem;
 }
+
+/* Responsive rules moved from styles/responsive.css */
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 4.5rem 3rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    padding: 6rem 3rem;
+  }
+}

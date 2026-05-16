@@ -105,3 +105,28 @@ section#dashboard {
   width: 22rem;
   margin: 0 auto;
 }
+
+/* Responsive rules moved from styles/responsive.css */
+@media only screen and (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content .item {
+    width: 50%;
+  }
+
+  #dashboard .content .item img {
+    width: 24rem;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #dashboard .content .item img {
+    width: 26.5rem;
+  }
+}

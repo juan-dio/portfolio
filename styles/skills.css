@@ -30,3 +30,21 @@ section#skills {
 .skills .skill a:hover svg {
   filter: grayscale(0);
 }
+
+/* Responsive rules moved from styles/responsive.css */
+@media only screen and (min-width: 768px) {
+  .skills {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .skills {
+    gap: 2.5rem;
+  }
+
+  .skills .skill svg {
+    height: 4.5rem;
+  }
+}

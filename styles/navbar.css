@@ -152,3 +152,70 @@
   height: 1px;
   background-color: var(--gray);
 }
+
+/* Responsive rules moved from styles/responsive.css */
+@media only screen and (min-width: 768px) {
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    position: relative;
+  }
+
+  .navbar .container.border::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    margin: 0 3rem;
+    background-color: var(--gray);
+    transition: all 0.3s ease;
+  }
+
+  .navbar .container .items.border::after,
+  .navbar .container .items.bordernav::after {
+    display: none;
+  }
+
+  .navbar .nav-btn {
+    display: none;
+  }
+
+  .navbar nav {
+    display: block;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    z-index: 0;
+  }
+
+  .navbar nav::after {
+    display: none;
+  }
+
+  .navbar nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbar nav ul li a {
+    padding: 0;
+  }
+
+  .navbar nav ul li a::after {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .navbar .container > * {
+    width: 100%;
+  }
+
+  .navbar nav ul {
+    justify-content: space-between;
+  }
+}
