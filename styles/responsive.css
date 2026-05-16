@@ -178,8 +178,12 @@
     gap: 1.5rem;
   }
 
+  .project .picture {
+    height: 14rem;
+  }
+
   .project .bottom {
-    height: 16rem;
+    height: 18rem;
   }
 
   /* .project .desc h4 {

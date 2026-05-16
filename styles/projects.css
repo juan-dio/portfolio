@@ -33,6 +33,7 @@ section#projects {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .project .bottom {
@@ -53,7 +54,7 @@ section#projects {
   gap: 0.25rem;
 }
 
-.project .desc h4 {
+.project .desc h3 {
   font-size: 1.125rem;
   font-weight: 500;
 }
