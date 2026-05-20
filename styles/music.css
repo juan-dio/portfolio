@@ -52,15 +52,6 @@
   animation: infiniteScrollX 8s linear infinite;
 }
 
-@keyframes infiniteScrollX {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 /* Keep animation running even when container is hidden, but pause it */
 .music-toggle .song-title-container:not(.show) .song-title {
   animation: infiniteScrollX 8s linear infinite;
