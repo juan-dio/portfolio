@@ -4,63 +4,59 @@ section#about {
   background-color: var(--white);
 }
 
-#about .content {
+#about .description {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
-#about .content .item.intro {
-  gap: 0.25rem;
-}
-
-#about .content .item.link {
-  gap: 1rem;
-}
-
-#about .content .item h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--primary);
-}
-
-#about .content .item p {
-  font-size: 1rem;
+#about .description p {
+  text-align: justify;
+  font-size: 1.125rem;
   font-weight: 400;
 }
 
-.social-icon {
+#about .description .progress-blocks {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-.social-icon a {
-  width: 2.5rem;
-  height: 2.5rem;
+#about .description .progress-blocks .block {
+  width: 100%;
+  padding: 1.25rem;
+  background-color: var(--light);
+  /* flex: 1; */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  border: 2px solid var(--dark);
-  border-radius: 50%;
-  transition: all 0.3s ease;
+  justify-content: center;
+  gap: 0.25rem;
+  border: 1px solid var(--gray);
+  border-radius: 1rem;
 }
 
-.social-icon a:hover {
-  border: 2px solid var(--primary);
+#about .description .progress-blocks .block:nth-child(3) {
   background-color: var(--primary);
+  color: var(--white);
+  border: none;
 }
 
-.social-icon a svg {
-  fill: var(--dark);
+#about .description .progress-blocks .block .number {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
-.social-icon a:hover svg {
-  fill: var(--white);
+#about .description .progress-blocks .block .name {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-/* Responsive rules moved from styles/responsive.css */
-@media only screen and (min-width: 1280px) {
-  #about .content {
-    gap: 4rem;
+@media only screen and (min-width: 768px) {
+  #about .description .progress-blocks .block {
+    flex: 1;
   }
 }

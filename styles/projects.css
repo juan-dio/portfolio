@@ -124,7 +124,6 @@ section#projects {
   font-weight: 400;
 }
 
-/* Responsive rules moved from styles/responsive.css */
 @media only screen and (min-width: 1280px) {
   .projects {
     grid-template-columns: repeat(2, 1fr);
