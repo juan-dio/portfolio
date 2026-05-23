@@ -1,5 +1,4 @@
-// Navbar
-
+// === Navbar ===
 const navbarContainer = document.querySelector('.navbar-container');
 const navbarItems = document.querySelector('.navbar-items');
 const navBtn = document.querySelector('#nav-btn');
@@ -24,7 +23,7 @@ navBtn.addEventListener('click', () => {
   navbarItems.classList.toggle('bordernav');
 });
 
-// Scroll Section
+// === Scroll Section ===
 const SECTIONS = {
   dashboard: document.querySelector('#dashboard'),
   about: document.querySelector('#about'),
@@ -53,8 +52,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Dashboard
-
+// === Dashboard ===
 const sentence = document.querySelector('#sentence');
 const inputCursor = document.querySelector('.input-cursor');
 
@@ -80,8 +78,7 @@ setInterval(() => {
   }
 }, 200);
 
-// CV Modal
-
+// === CV Modal ===
 const cvBtn = document.querySelector('#cv-btn');
 const cvSection = document.querySelector('#cv-modal');
 const cvCloseBtn = document.querySelector('#close-cv-modal-btn');
@@ -98,8 +95,7 @@ cvCloseBtn.addEventListener('click', () => {
   document.body.style.overflow = 'auto';
 });
 
-// Music
-
+// === Music ===
 const audio = document.querySelector('#background-music');
 const playBtn = document.querySelector('.music-toggle');
 const musicOnIcon = document.querySelector('#music-on');
