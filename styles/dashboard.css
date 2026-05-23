@@ -139,8 +139,8 @@ section#dashboard {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 1.5rem;
-  border-radius: 4rem;
+  padding: 1rem;
+  border-radius: 2.5rem;
   background-color: var(--primary);
 }
 
@@ -200,10 +200,6 @@ section#dashboard {
 
   #dashboard .content .item img {
     width: 26.5rem;
-  }
-
-  .social-container {
-    padding: 1.5rem 1rem;
   }
 
   .social-icon {
