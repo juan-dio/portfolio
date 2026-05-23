@@ -120,7 +120,6 @@ ol {
   text-align: center;
 }
 
-/* Responsive rules moved from styles/responsive.css */
 @media only screen and (min-width: 768px) {
   .container {
     padding: 4.5rem 3rem;

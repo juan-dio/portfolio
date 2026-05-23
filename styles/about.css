@@ -1,10 +1,30 @@
 ﻿/* === ABOUT === */
 
-section#about {
+#about {
   background-color: var(--white);
 }
 
-#about .description {
+.about-container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about-content .title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+}
+
+.about-content .description {
   width: 100%;
   max-width: 48rem;
   margin: 0 auto;
@@ -13,23 +33,22 @@ section#about {
   gap: 2rem;
 }
 
-#about .description p {
+.about-content .description p {
   text-align: justify;
   font-size: 1.125rem;
   font-weight: 400;
 }
 
-#about .description .progress-blocks {
+.about-content .description .progress-blocks {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-#about .description .progress-blocks .block {
+.about-content .description .progress-blocks .block {
   width: 100%;
   padding: 1.25rem;
   background-color: var(--light);
-  /* flex: 1; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,24 +58,34 @@ section#about {
   border-radius: 1rem;
 }
 
-#about .description .progress-blocks .block:nth-child(3) {
+.about-content .description .progress-blocks .block:nth-child(3) {
   background-color: var(--primary);
   color: var(--white);
   border: none;
 }
 
-#about .description .progress-blocks .block .number {
+.about-content .description .progress-blocks .block .number {
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-#about .description .progress-blocks .block .name {
+.about-content .description .progress-blocks .block .name {
   font-size: 1rem;
   font-weight: 500;
 }
 
 @media only screen and (min-width: 768px) {
-  #about .description .progress-blocks .block {
+  .container {
+    padding: 4.5rem 3rem;
+  }
+
+  .about-content .description .progress-blocks .block {
     flex: 1;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    padding: 6rem 3rem;
   }
 }
