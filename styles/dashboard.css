@@ -43,6 +43,9 @@
 
 .dashboard-content aside {
   grid-area: social;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro {
@@ -119,13 +122,13 @@
   background-color: var(--primary);
 }
 
-.social-icon {
+#dashboard .social-icon {
   display: flex;
   flex-direction: row;
   gap: 1rem;
 }
 
-.social-icon a {
+#dashboard .social-icon a {
   width: 2.5rem;
   height: 2.5rem;
   display: flex;
@@ -136,16 +139,16 @@
   transition: all 0.3s ease;
 }
 
-.social-icon a:hover {
+#dashboard .social-icon a:hover {
   border: 2px solid var(--light);
   background-color: var(--light);
 }
 
-.social-icon a svg {
+#dashboard .social-icon a svg {
   fill: var(--light);
 }
 
-.social-icon a:hover svg {
+#dashboard .social-icon a:hover svg {
   fill: var(--primary);
 }
 
@@ -177,7 +180,7 @@
     width: 26.5rem;
   }
 
-  .social-icon {
+  #dashboard .social-icon {
     flex-direction: column;
   }
 }
