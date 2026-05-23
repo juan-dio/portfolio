@@ -4,7 +4,12 @@
   background-color: var(--dark);
 }
 
-.footer .container {
+.footer-container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   padding-top: 4.5rem;
   padding-bottom: 5.5rem;
   display: flex;
@@ -12,10 +17,12 @@
   gap: 3rem;
 }
 
-.footer .container .content {
+.footer-content {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 2rem;
+  position: relative;
 }
 
 .farewell {
@@ -120,7 +127,7 @@
   color: var(--light);
 }
 
-.footer .container .copyright {
+.copyright {
   padding-top: 1rem;
   border-top: 1px solid var(--light);
   font-size: 0.875rem;
@@ -129,7 +136,11 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .footer .container .content {
+  .footer-container {
+    padding: 4.5rem 3rem;
+  }
+
+  .footer-content {
     flex-wrap: nowrap;
     gap: 1.5rem;
   }
@@ -141,7 +152,11 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  .footer .container .content {
+  .footer-container {
+    padding: 6rem 3rem;
+  }
+
+  .footer-content {
     gap: 5.5rem;
   }
 
