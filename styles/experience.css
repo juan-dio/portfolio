@@ -1,14 +1,27 @@
 ﻿/* === EXPERIENCE === */
 
-section#experience {
+#experience {
   background-color: var(--light);
 }
 
-#experience .row-content {
+.experience-container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: column;
   gap: 0;
 }
 
-#experience .row-content > .title {
+.experience-content .title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
   margin-bottom: 3rem;
 }
 
@@ -80,8 +93,11 @@ section#experience {
   font-weight: 300;
 }
 
-/* Responsive rules moved from styles/responsive.css */
 @media only screen and (min-width: 768px) {
+  .experience-container {
+    padding: 4.5rem 3rem;
+  }
+
   .experience {
     grid-template-areas: "company pointer desc";
   }
@@ -103,6 +119,10 @@ section#experience {
 }
 
 @media only screen and (min-width: 1280px) {
+  .experience-container {
+    padding: 6rem 3rem;
+  }
+
   .experience .company {
     width: 25rem;
   }
