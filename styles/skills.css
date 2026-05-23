@@ -1,7 +1,27 @@
 ﻿/* === SKILLS === */
 
-section#skills {
+#skills {
   background-color: var(--white);
+}
+
+.skills-section-container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.skills-content .title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
 }
 
 .skills-container {
@@ -31,8 +51,11 @@ section#skills {
   filter: grayscale(0);
 }
 
-/* Responsive rules moved from styles/responsive.css */
 @media only screen and (min-width: 768px) {
+  .skills-section-container {
+    padding: 4.5rem 3rem;
+  }
+
   .skills {
     grid-template-columns: repeat(8, 1fr);
     gap: 2rem;
@@ -40,6 +63,10 @@ section#skills {
 }
 
 @media only screen and (min-width: 1280px) {
+  .skills-section-container {
+    padding: 6rem 3rem;
+  }
+
   .skills {
     gap: 2.5rem;
   }
