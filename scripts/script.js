@@ -82,17 +82,62 @@ setInterval(() => {
 const cvBtn = document.querySelector('#cv-btn');
 const cvSection = document.querySelector('#cv-modal');
 const cvCloseBtn = document.querySelector('#close-cv-modal-btn');
+const navbar = document.querySelector('.navbar');
+let cvCloseTimeout = null;
 
 cvBtn.addEventListener('click', () => {
+  if (cvCloseTimeout) {
+    clearTimeout(cvCloseTimeout);
+    cvCloseTimeout = null;
+  }
+
+  cvSection.classList.remove('closing');
+
+  // Compensate for missing scrollbar to avoid layout shift
+  const scrollBarComp = window.innerWidth - document.documentElement.clientWidth;
+  if (scrollBarComp > 0) {
+    // store original inline padding-right so we can restore it
+    document.body.dataset.bodyOriginalPaddingRight = document.body.style.paddingRight || '';
+    document.body.style.paddingRight = `${scrollBarComp}px`;
+    document.body.dataset.navbarOriginalPaddingRight = navbar.style.paddingRight || '';
+    navbar.style.paddingRight = `${scrollBarComp}px`;
+  }
+
   cvSection.style.display = 'block';
   // Disable scrolling when CV modal is open
   document.body.style.overflow = 'hidden';
 });
 
 cvCloseBtn.addEventListener('click', () => {
-  cvSection.style.display = 'none';
-  // Enable scrolling when CV modal is closed
-  document.body.style.overflow = 'auto';
+  if (cvSection.classList.contains('closing')) return;
+
+  cvSection.classList.add('closing');
+
+  // wait for close animation before hiding modal and restoring page layout
+  cvCloseTimeout = setTimeout(() => {
+    cvSection.style.display = 'none';
+    cvSection.classList.remove('closing');
+
+    // Enable scrolling when CV modal is closed
+    document.body.style.overflow = 'auto';
+
+    // restore original padding-right (if any)
+    if (document.body.dataset.bodyOriginalPaddingRight !== undefined) {
+      document.body.style.paddingRight = document.body.dataset.bodyOriginalPaddingRight;
+      delete document.body.dataset.bodyOriginalPaddingRight;
+    } else {
+      document.body.style.paddingRight = '';
+    }
+    if (navbar.dataset.navbarOriginalPaddingRight !== undefined) {
+      navbar.style.paddingRight = navbar.dataset.navbarOriginalPaddingRight;
+      delete navbar.dataset.navbarOriginalPaddingRight;
+    } else {
+      navbar.style.paddingRight = '';
+    }
+
+    cvCloseTimeout = null;
+  }, 220);
+
 });
 
 // === Music ===
