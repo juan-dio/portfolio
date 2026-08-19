@@ -133,6 +133,16 @@
   filter: opacity(0.75);
 }
 
+.project .nav .project-link a.detail {
+  background-color: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.project .nav .project-link a.detail:hover {
+  filter: brightness(0.85);
+}
+
 .project .nav .category {
   display: flex;
   align-items: center;

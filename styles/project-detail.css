@@ -1,0 +1,243 @@
+/* === PROJECT DETAIL === */
+
+.detail-page {
+  min-height: 100vh;
+  background-color: var(--light);
+}
+
+.detail-header {
+  background-color: var(--dark);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.detail-header .back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.detail-header .back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.detail-header .page-title {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.detail-container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.detail-hero {
+  width: 100%;
+  height: 20rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.detail-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detail-title h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.detail-title .category-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+}
+
+.detail-description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--darkgray);
+  line-height: 1.7;
+}
+
+.detail-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.detail-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--darkgray);
+  line-height: 1.5;
+}
+
+.detail-highlights li::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  min-width: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--primary);
+  margin-top: 0.5rem;
+}
+
+.detail-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detail-tech-stack .tech-tag {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary);
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+}
+
+.detail-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.detail-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.detail-links a.repo {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.detail-links a.live {
+  background-color: var(--white);
+  color: var(--dark);
+  border: 1px solid var(--gray);
+}
+
+.detail-links a:hover {
+  filter: brightness(0.9);
+}
+
+.detail-links a.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.detail-not-found {
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.detail-not-found h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.detail-not-found p {
+  color: var(--darkgray);
+  margin-bottom: 1.5rem;
+}
+
+.detail-not-found a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.detail-not-found a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+  .detail-container {
+    padding: 3rem 3rem;
+  }
+
+  .detail-hero {
+    height: 28rem;
+  }
+
+  .detail-title h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .detail-container {
+    padding: 4rem 3rem;
+  }
+
+  .detail-hero {
+    height: 32rem;
+  }
+
+  .detail-content {
+    max-width: 64rem;
+  }
+
+  .detail-title h1 {
+    font-size: 2.25rem;
+  }
+}
