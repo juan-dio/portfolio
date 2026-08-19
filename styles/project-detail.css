@@ -51,7 +51,7 @@
 
 .detail-hero {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   border-radius: 1.5rem;
   overflow: hidden;
   margin-bottom: 2rem;
@@ -67,7 +67,7 @@
 /* Carousel Container */
 .detail-carousel {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   border-radius: 1.5rem;
   overflow: hidden;
   margin-bottom: 2rem;
