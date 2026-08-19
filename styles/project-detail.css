@@ -51,10 +51,11 @@
 
 .detail-hero {
   width: 100%;
+  max-width: 40rem;
+  margin: 0 auto 2rem auto;
   aspect-ratio: 16 / 9;
   border-radius: 1.5rem;
   overflow: hidden;
-  margin-bottom: 2rem;
 }
 
 .detail-hero img {
@@ -67,10 +68,11 @@
 /* Carousel Container */
 .detail-carousel {
   width: 100%;
+  max-width: 40rem;
+  margin: 0 auto 2rem auto;
   aspect-ratio: 16 / 9;
   border-radius: 1.5rem;
   overflow: hidden;
-  margin-bottom: 2rem;
   position: relative;
   background-color: var(--dark);
 }
