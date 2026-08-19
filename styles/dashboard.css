@@ -111,7 +111,7 @@
 }
 
 .dashboard-item img {
-  width: 22rem;
+  width: 14rem;
   margin: 0 auto;
 }
 
@@ -164,14 +164,14 @@
       "introduction image"
       "introduction image"
       "introduction social";
-    gap: 0;
+    /* gap: 0; */
   }
 
-  .dashboard-item img {
-    width: 24rem;
+  /* .dashboard-item img {
+    width: 14rem;
     margin-left: 0;
     margin-right: auto;
-  }
+  } */
 }
 
 @media only screen and (min-width: 1280px) {
@@ -187,7 +187,7 @@
   }
 
   .dashboard-item img {
-    width: 26.5rem;
+    width: 16rem;
   }
 
   #dashboard .social-icon {
