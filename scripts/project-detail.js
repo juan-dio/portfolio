@@ -45,10 +45,48 @@
     .map((t) => `<span class="tech-tag">${t}</span>`)
     .join("");
 
+  const images = (project.images && project.images.length > 0) ? project.images : [project.image];
+
+  let heroHTML = "";
+  if (images.length > 1) {
+    const slidesHTML = images
+      .map((img, index) => `<img src="${img}" alt="${project.title} - Image ${index + 1}" class="carousel-slide ${index === 0 ? "active" : ""}" />`)
+      .join("");
+
+    const dotsHTML = images
+      .map((_, index) => `<button class="carousel-dot ${index === 0 ? "active" : ""}" data-index="${index}" aria-label="Slide ${index + 1}"></button>`)
+      .join("");
+
+    heroHTML = `
+      <div class="detail-carousel">
+        <div class="carousel-track">
+          ${slidesHTML}
+        </div>
+        <button class="carousel-btn prev" aria-label="Previous Slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="carousel-btn next" aria-label="Next Slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18l6-6-6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="carousel-dots">
+          ${dotsHTML}
+        </div>
+      </div>
+    `;
+  } else {
+    heroHTML = `
+      <div class="detail-hero">
+        <img src="${images[0]}" alt="${project.title}" />
+      </div>
+    `;
+  }
+
   detailContent.innerHTML = `
-    <div class="detail-hero">
-      <img src="${project.image}" alt="${project.title}" />
-    </div>
+    ${heroHTML}
     <div class="detail-content">
       <div class="detail-title">
         <h1>${project.title}</h1>
@@ -109,4 +147,50 @@
       </div>
     </div>
   `;
+
+  // Initialize Carousel Logic if carousel exists
+  if (images.length > 1) {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const dots = document.querySelectorAll(".carousel-dot");
+    const prevBtn = document.querySelector(".carousel-btn.prev");
+    const nextBtn = document.querySelector(".carousel-btn.next");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      if (index < 0) {
+        currentSlide = slides.length - 1;
+      } else if (index >= slides.length) {
+        currentSlide = 0;
+      } else {
+        currentSlide = index;
+      }
+
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle("active", idx === currentSlide);
+      });
+
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle("active", idx === currentSlide);
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        showSlide(currentSlide - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        showSlide(currentSlide + 1);
+      });
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", (e) => {
+        const index = parseInt(e.target.getAttribute("data-index"), 10);
+        showSlide(index);
+      });
+    });
+  }
 })();

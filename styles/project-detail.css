@@ -51,7 +51,7 @@
 
 .detail-hero {
   width: 100%;
-  height: 20rem;
+  aspect-ratio: 4 / 3;
   border-radius: 1.5rem;
   overflow: hidden;
   margin-bottom: 2rem;
@@ -62,6 +62,99 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+/* Carousel Container */
+.detail-carousel {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  position: relative;
+  background-color: var(--dark);
+}
+
+/* Carousel Track */
+.detail-carousel .carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual Slides */
+.detail-carousel .carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+.detail-carousel .carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Navigation Arrows */
+.detail-carousel .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.detail-carousel .carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.detail-carousel .carousel-btn.prev {
+  left: 1rem;
+}
+
+.detail-carousel .carousel-btn.next {
+  right: 1rem;
+}
+
+/* Dots Indicator */
+.detail-carousel .carousel-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.detail-carousel .carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.detail-carousel .carousel-dot.active {
+  background-color: var(--white);
+  transform: scale(1.2);
 }
 
 .detail-content {
@@ -216,10 +309,6 @@
     padding: 3rem 3rem;
   }
 
-  .detail-hero {
-    height: 28rem;
-  }
-
   .detail-title h1 {
     font-size: 2rem;
   }
@@ -228,10 +317,6 @@
 @media only screen and (min-width: 1280px) {
   .detail-container {
     padding: 4rem 3rem;
-  }
-
-  .detail-hero {
-    height: 32rem;
   }
 
   .detail-content {

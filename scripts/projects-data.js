@@ -5,6 +5,11 @@ const projectsData = [
     subtitle: "Intern Project",
     category: "Intern Project",
     image: "assets/images/projects/period.png",
+    images: [
+      "assets/images/projects/period.png",
+      "assets/images/projects/period.png",
+      "assets/images/projects/period.png",
+    ],
     repoUrl: "https://github.com/juan-dio/period-tracker-app",
     liveUrl: "https://period-tracker-app-gules.vercel.app",
     description: "A period tracking application developed during an internship at Minilemon Technology. The app helps users log menstrual symptoms, blood flow, mood, and other related notes, while also predicting the next menstrual period based on stored data. Built with Next.js and Supabase.",
@@ -21,6 +26,11 @@ const projectsData = [
     subtitle: "Intern Project",
     category: "Intern Project",
     image: "assets/images/projects/mahad.png",
+    images: [
+      "assets/images/projects/mahad.png",
+      "assets/images/projects/mahad.png",
+      "assets/images/projects/mahad.png"
+    ],
     repoUrl: "",
     liveUrl: "",
     description: "A backend development project for the Academic Information System (SIAKAD) of Ma'had Aly Sa'iidusshiddiqiyah Jakarta during an internship at PT. Ina Gata Persada. The system manages student data, grades, schedules, and academic administration. Built with Laravel and MySQL, with a focus on data management, module integration, and backend performance optimization.",
@@ -38,6 +48,11 @@ const projectsData = [
     subtitle: "Intern Project",
     category: "Intern Project",
     image: "assets/images/projects/reagen.png",
+    images: [
+      "assets/images/projects/reagen.png",
+      "assets/images/projects/reagen.png",
+      "assets/images/projects/reagen.png"
+    ],
     repoUrl: "https://github.com/juan-dio/sistem-pengelolaan-reagen-lab",
     liveUrl: "",
     description: "A web-based application developed during an internship at PT. Saba Indomedika to manage laboratory reagent inventory. The system includes stock tracking, item management, usage monitoring, and barcode printing for efficient identification. Built with Laravel, Bootstrap, jQuery, and MySQL.",
@@ -54,6 +69,11 @@ const projectsData = [
     subtitle: "Uni Project",
     category: "Uni Project",
     image: "assets/images/projects/kov.png",
+    images: [
+      "assets/images/projects/kov.png",
+      "assets/images/projects/kov.png",
+      "assets/images/projects/kov.png"
+    ],
     repoUrl: "https://github.com/juan-dio/knight-of-valor",
     liveUrl: "",
     description: "A 2D platformer game where a knight navigates obstacles and enemies to rescue a princess. Developed with Godot 4 as a final project for the Software Project course, using the Agile development method.",
@@ -70,6 +90,11 @@ const projectsData = [
     subtitle: "Uni Project",
     category: "Uni Project",
     image: "assets/images/projects/psd.png",
+    images: [
+      "assets/images/projects/psd.png",
+      "assets/images/projects/psd.png",
+      "assets/images/projects/psd.png"
+    ],
     repoUrl: "https://github.com/juan-dio/rnn-lung-cancer-classification",
     liveUrl: "",
     description: "A machine learning project that classifies patients as having lung cancer or not based on survey data containing medical history. Developed with a Recurrent Neural Network (RNN) model, using Python, TensorFlow for model training, and Streamlit for the user interface as a final project for the Data Science Project course.",
@@ -86,6 +111,11 @@ const projectsData = [
     subtitle: "Uni Project",
     category: "Uni Project",
     image: "assets/images/projects/boowang.png",
+    images: [
+      "assets/images/projects/boowang.png",
+      "assets/images/projects/boowang.png",
+      "assets/images/projects/boowang.png"
+    ],
     repoUrl: "https://github.com/juan-dio/boowang-app",
     liveUrl: "",
     description: "A tourism e-ticketing web application that allows users to explore destinations, book tickets, and complete online payments. Developed with PHP, Laravel, MySQL, and Bootstrap as a final project for the Software Engineering course.",
@@ -102,6 +132,11 @@ const projectsData = [
     subtitle: "Uni Project",
     category: "Uni Project",
     image: "assets/images/projects/meatmaster.png",
+    images: [
+      "assets/images/projects/meatmaster.png",
+      "assets/images/projects/meatmaster.png",
+      "assets/images/projects/meatmaster.png"
+    ],
     repoUrl: "https://github.com/juan-dio/meatmaster-app",
     liveUrl: "",
     description: "An e-commerce web application that allows users to register, log in, browse product catalogs, add items to a shopping cart, place orders, and complete payments. Developed with PHP and MySQL as a final project for the Application Development course.",
@@ -118,6 +153,11 @@ const projectsData = [
     subtitle: "Uni Project",
     category: "Uni Project",
     image: "assets/images/projects/djangga.png",
+    images: [
+      "assets/images/projects/djangga.png",
+      "assets/images/projects/djangga.png",
+      "assets/images/projects/djangga.png"
+    ],
     repoUrl: "https://github.com/juan-dio/TugasAplikasiDPW-A03",
     liveUrl: "",
     description: "A static website that showcases information about Djangga Selecta Resort, including facilities, a photo gallery, pricing details, and booking contact information. Developed with HTML, CSS, and JavaScript as a final project for the Web Programming Fundamentals course.",
