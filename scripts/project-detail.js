@@ -52,7 +52,21 @@
     <div class="detail-content">
       <div class="detail-title">
         <h1>${project.title}</h1>
-        <span class="category-badge">${project.category}</span>
+        <div class="category">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.5 13.4225C12.5 13.7777 12.2203 14.0654 11.875 14.0654H8.125C7.77969 14.0654 7.5 13.7777 7.5 13.4225V11.494H0V17.2797C0 18.3083 0.875 19.2083 1.875 19.2083H18.125C19.125 19.2083 20 18.3083 20 17.2797V11.494H12.5V13.4225ZM18.125 5.06539H15V3.13682C15 2.10825 14.125 1.20825 13.125 1.20825H6.875C5.875 1.20825 5 2.10825 5 3.13682V5.06539H1.875C0.875 5.06539 0 5.96539 0 6.99397V10.2083H20V6.99397C20 5.96539 19.125 5.06539 18.125 5.06539ZM12.5 5.06539H7.5V3.77968H12.5V5.06539Z"
+              fill="#20262E"
+            />
+          </svg>
+          <p>${project.category}</p>
+        </div>
       </div>
 
       <p class="detail-description">${project.description}</p>
