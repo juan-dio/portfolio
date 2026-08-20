@@ -7,13 +7,19 @@
 
 .detail-header {
   background-color: var(--dark);
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.detail-header-container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.125rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .detail-header .back-btn {
@@ -307,6 +313,10 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .detail-header-container {
+    padding: 1.125rem 3rem;
+  }
+
   .detail-container {
     padding: 3rem 3rem;
   }
