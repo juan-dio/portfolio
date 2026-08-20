@@ -74,7 +74,7 @@
 
 .hamburger-menu .line {
   height: 2px;
-  background-color: var(--black);
+  background-color: var(--dark);
   border-radius: 0.25rem;
   transition: all 0.3s ease;
 }

@@ -1,3 +1,16 @@
+// Navbar
+const header = document.querySelector('header');
+const projectNavbarItems = document.querySelector('.project-navbar-items');
+const fixedNav = header.offsetTop;
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > fixedNav) {
+    projectNavbarItems.classList.add('border');
+  } else {
+    projectNavbarItems.classList.remove('border');
+  }
+});
+
 // === Project Detail Page ===
 (function () {
   const params = new URLSearchParams(window.location.search);

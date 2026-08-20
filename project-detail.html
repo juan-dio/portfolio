@@ -8,27 +8,41 @@
     <link rel="stylesheet" href="styles/project-detail.css" />
   </head>
   <body>
-    <div class="detail-page">
-      <header class="detail-header">
-        <div class="detail-header-container">
-          <a href="index.html#projects" class="back-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 12H5M12 19l-7-7 7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="back-text">Back</span>
-          </a>
-          <span class="page-title">Project Detail</span>
+    <header>
+      <div class="project-navbar">
+        <div class="project-navbar-container">
+          <div class="project-navbar-items">
+            <a href="index.html#projects" class="back-btn">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 12H5M12 19l-7-7 7-7"
+                  stroke="var(--dark)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span class="back-text">Back</span>
+            </a>
+            <span class="title">Project Detail</span>
+          </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <main class="detail-container" id="detail-content">
-        <div class="detail-not-found">
-          <h2>Project Not Found</h2>
-          <p>The project you are looking for does not exist.</p>
-          <a href="index.html#projects">Back to Projects</a>
-        </div>
-      </main>
-    </div>
+    <main class="detail-container" id="detail-content">
+      <div class="detail-not-found">
+        <h2>Project Not Found</h2>
+        <p>The project you are looking for does not exist.</p>
+        <a href="index.html#projects">Back to Projects</a>
+      </div>
+    </main>
 
     <script src="scripts/projects-data.js"></script>
     <script src="scripts/project-detail.js"></script>
