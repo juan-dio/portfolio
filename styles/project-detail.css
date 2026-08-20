@@ -16,9 +16,9 @@
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
-  padding: 1.125rem 1.5rem;
+  padding: 1rem 1.5rem;
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -30,11 +30,15 @@
   color: var(--white);
   font-size: 0.875rem;
   font-weight: 500;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem;
   border-radius: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: transparent;
   transition: all 0.3s ease;
+}
+
+.detail-header .back-text {
+  display: none;
 }
 
 .detail-header .back-btn:hover {
@@ -101,7 +105,9 @@
   object-position: top;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  transition:
+    opacity 0.4s ease-in-out,
+    visibility 0.4s ease-in-out;
 }
 
 .detail-carousel .carousel-slide.active {
@@ -314,7 +320,15 @@
 
 @media only screen and (min-width: 768px) {
   .detail-header-container {
-    padding: 1.125rem 3rem;
+    padding: 1rem 3rem;
+  }
+
+  .detail-header .back-text {
+    display: inline;
+  }
+
+  .detail-header .back-btn {
+    padding: 0.5rem 0.75rem;
   }
 
   .detail-container {
