@@ -105,19 +105,24 @@
 }
 
 .project .nav .project-link a {
-  width: 5.5rem;
-  padding: 0.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
   border-radius: 0.75rem;
   border: 1px solid var(--gray);
   background-color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--dark);
   transition: all 0.3s ease;
+}
+
+.project .nav .project-link .btn-text {
+  display: none;
 }
 
 .project .nav .project-link a.repo {
@@ -157,6 +162,16 @@
 @media only screen and (min-width: 768px) {
   .projects-section-container {
     padding: 4.5rem 3rem;
+  }
+
+  .project .nav .project-link a {
+    width: 5.5rem;
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .project .nav .project-link .btn-text {
+    display: inline;
   }
 }
 
