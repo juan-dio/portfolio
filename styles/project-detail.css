@@ -59,7 +59,11 @@
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.125);
   /* border: 1px solid var(--gray); */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.project-navbar-items .back-btn svg {
+  transition: stroke 0.3s ease;
 }
 
 .project-navbar-items .back-btn:hover {
