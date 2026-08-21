@@ -135,7 +135,8 @@
 }
 
 .project .nav .project-link a.disabled {
-  filter: opacity(0.75);
+  opacity: 0.75;
+  pointer-events: none;
 }
 
 .project .nav .project-link a.detail {
