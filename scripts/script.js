@@ -226,7 +226,14 @@ audio.addEventListener('ended', function () {
 // === Render Projects ===
 function renderProjects() {
   const projectsGrid = document.getElementById('projects-grid');
-  if (!projectsGrid || typeof projectsData === 'undefined') return;
+  if (typeof projectsData === 'undefined') return;
+
+  const projectsCountEl = document.getElementById('projects-count');
+  if (projectsCountEl) {
+    projectsCountEl.textContent = projectsData.length;
+  }
+
+  if (!projectsGrid) return;
 
   const categoryInternSVG = `
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
