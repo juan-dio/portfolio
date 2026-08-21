@@ -41,7 +41,8 @@
 }
 
 .project .picture {
-  height: 12rem;
+  width: 100%;
+  aspect-ratio: 2 / 1;
   border-top: 1px solid var(--gray);
   border-left: 1px solid var(--gray);
   border-right: 1px solid var(--gray);
@@ -184,10 +185,6 @@
   .projects {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-  }
-
-  .project .picture {
-    height: 14rem;
   }
 
   .project .bottom {
