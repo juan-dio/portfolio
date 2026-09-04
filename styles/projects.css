@@ -84,6 +84,11 @@
   font-size: 0.875rem;
   font-weight: 300;
   color: var(--darkgray);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project .desc p span.bold {
@@ -188,6 +193,6 @@
   }
 
   .project .bottom {
-    height: 18rem;
+    height: 14rem;
   }
 }

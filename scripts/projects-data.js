@@ -1,5 +1,31 @@
 const projectsData = [
   {
+    id: "rice-variety-classification",
+    title: "Rice Variety Classification Using MobileNetV3 with Efficient Channel Attention",
+    subtitle: "Uni Project",
+    category: "Uni Project",
+    image: "assets/images/projects/skripsi/skripsi1.png",
+    images: [
+      "assets/images/projects/skripsi/skripsi1.png",
+      "assets/images/projects/skripsi/skripsi2.png",
+      "assets/images/projects/skripsi/skripsi3.png",
+      "assets/images/projects/skripsi/skripsi4.png",
+      "assets/images/projects/skripsi/skripsi5.png",
+      "assets/images/projects/skripsi/skripsi6.png",
+      "assets/images/projects/skripsi/skripsi7.png"
+    ],
+    repoUrl: "https://github.com/juan-dio/skripsi-rice-classification-mobilenetv3-eca",
+    liveUrl: "https://rice-variety-classification.streamlit.app",
+    description: "An undergraduate thesis research project focusing on classifying rice grain varieties (Ciherang, IR64, and Mentik Susu) using a modified MobileNetV3 architecture. The standard Squeeze-and-Excitation (SE) module was replaced with Efficient Channel Attention (ECA) to improve efficiency and classification performance. Evaluated across 6,000 images, the MobileNetV3-ECA model reduced parameters by 35.72% (from 4.23M to 2.72M) and achieved a faster inference speed of 853.15 ms with an average accuracy, precision, recall, and F1-score of 99.75%. Built with Python, PyTorch, and Streamlit.",
+    highlights: [
+      "Modified MobileNetV3 architecture by replacing Squeeze-and-Excitation (SE) with Efficient Channel Attention (ECA).",
+      "Reduced total parameters by 35.72% (from 4,228,441 to 2,718,029) while improving inference speed.",
+      "Achieved 99.75% accuracy, precision, recall, and F1-score across 6,000 images of Ciherang, IR64, and Mentik Susu varieties.",
+      "Built and deployed an interactive web application using Streamlit for real-time classification."
+    ],
+    techStack: ["Python", "PyTorch", "Streamlit", "OpenCV", "Scikit-Learn"]
+  },
+  {
     id: "period-tracker",
     title: "Period Tracker",
     subtitle: "Intern Project",
