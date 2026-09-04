@@ -48,8 +48,10 @@
 
 .education-card .header-top {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .education-card .univ-info {
@@ -129,5 +131,9 @@
 @media only screen and (min-width: 768px) {
   .education-container {
     padding: 4.5rem 3rem 2rem;
+  }
+
+  .education-card .header-top {
+    flex-direction: row;
   }
 }
