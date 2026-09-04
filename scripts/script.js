@@ -27,6 +27,7 @@ navBtn.addEventListener('click', () => {
 const SECTIONS = {
   dashboard: document.querySelector('#dashboard'),
   about: document.querySelector('#about'),
+  education: document.querySelector('#education'),
   experience: document.querySelector('#experience'),
   skills: document.querySelector('#skills'),
   projects: document.querySelector('#projects'),
