@@ -152,7 +152,7 @@ let songTitleTimeout = null;
 
 const directory = 'assets/musics/';
 const playlist = ['Paramore - The Only Exception', 'Galileo Galilei - Aoi Shiori', 'Sukima Switch - Line'];
-let currentTrack = 0;
+let currentTrack = Math.floor(Math.random() * playlist.length);
 
 function showSongTitle(title) {
   if (!songTitleContainer || !songTitle) return;
@@ -217,8 +217,11 @@ playBtn.addEventListener('click', () => {
 });
 
 audio.addEventListener('ended', function () {
-  currentTrack++;
-  if (currentTrack >= playlist.length) currentTrack = 0;
+  let nextTrack = Math.floor(Math.random() * playlist.length);
+  if (playlist.length > 1 && nextTrack === currentTrack) {
+    nextTrack = (currentTrack + 1) % playlist.length;
+  }
+  currentTrack = nextTrack;
   audio.src = directory + playlist[currentTrack] + '.mp3';
   audio.play();
   showSongTitle(playlist[currentTrack]);
