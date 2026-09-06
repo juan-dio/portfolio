@@ -88,10 +88,11 @@
   width: 100%;
   max-width: 42rem;
   margin: 0 auto 2rem auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
   border: 1px solid var(--gray);
   border-radius: 1rem;
   overflow: hidden;
+  background-color: var(--dark);
 }
 
 .detail-hero img,
@@ -105,7 +106,6 @@
 /* Carousel Container */
 .detail-carousel {
   position: relative;
-  background-color: var(--dark);
 }
 
 /* Carousel Track */
@@ -344,8 +344,8 @@
   }
 
   .project-navbar-items .back-btn {
-    border-radius: 0.75rem;
-    padding: 0.5rem 0.75rem;
+    border-radius: 2.5rem;
+    padding: 0.5rem 1rem;
   }
 
   .project-navbar-items .back-text {
