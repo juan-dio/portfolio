@@ -18,7 +18,16 @@ let fallbackTimer = setTimeout(dismissSplash, fallbackTimeout);
 
 function checkCoreResourcesLoaded() {
   const heroImg = document.querySelector('#dashboard img');
-  const fontPromise = document.fonts ? document.fonts.ready : Promise.resolve();
+  
+  const fontPromise = document.fonts
+    ? Promise.all([
+        document.fonts.load('300 1rem "Poppins"'),
+        document.fonts.load('400 1rem "Poppins"'),
+        document.fonts.load('500 1rem "Poppins"'),
+        document.fonts.load('600 1rem "Poppins"'),
+        document.fonts.ready,
+      ])
+    : Promise.resolve();
 
   const heroImgPromise = new Promise((resolve) => {
     if (!heroImg || heroImg.complete) {
