@@ -25,13 +25,6 @@
   text-align: center;
 }
 
-.splash-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--white);
-}
-
 .splash-spinner {
   width: 40px;
   height: 40px;
