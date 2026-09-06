@@ -1,7 +1,53 @@
+// === Splash Screen Handler ===
+const splashScreen = document.querySelector('#splash-screen');
+
+function dismissSplash() {
+  if (!splashScreen || splashScreen.classList.contains('hide')) return;
+  splashScreen.classList.add('hide');
+  setTimeout(() => {
+    if (splashScreen && splashScreen.parentNode) {
+      splashScreen.parentNode.removeChild(splashScreen);
+    }
+  }, 500);
+}
+
+const startTime = Date.now();
+const minDisplayTime = 500;
+const fallbackTimeout = 3000;
+let fallbackTimer = setTimeout(dismissSplash, fallbackTimeout);
+
+function checkCoreResourcesLoaded(heroImgEl) {
+  const fontPromise = document.fonts
+    ? Promise.all([
+        document.fonts.load('300 1rem "Poppins"'),
+        document.fonts.load('400 1rem "Poppins"'),
+        document.fonts.load('500 1rem "Poppins"'),
+        document.fonts.load('600 1rem "Poppins"'),
+        document.fonts.ready,
+      ])
+    : Promise.resolve();
+
+  const heroImgPromise = new Promise((resolve) => {
+    if (!heroImgEl || heroImgEl.complete) {
+      resolve();
+    } else {
+      heroImgEl.addEventListener('load', resolve, { once: true });
+      heroImgEl.addEventListener('error', resolve, { once: true });
+    }
+  });
+
+  Promise.all([fontPromise, heroImgPromise]).then(() => {
+    clearTimeout(fallbackTimer);
+    const elapsedTime = Date.now() - startTime;
+    const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
+    setTimeout(dismissSplash, remainingTime);
+  });
+}
+
 // Navbar
 const header = document.querySelector('header');
 const projectNavbarItems = document.querySelector('.project-navbar-items');
-const fixedNav = header.offsetTop;
+const fixedNav = header ? header.offsetTop : 0;
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > fixedNav) {
@@ -26,6 +72,7 @@ window.addEventListener('scroll', () => {
         <a href="index.html#projects">Back to Projects</a>
       </div>
     `;
+    dismissSplash();
   }
 
   if (!projectId) {
@@ -63,7 +110,7 @@ window.addEventListener('scroll', () => {
   let heroHTML = "";
   if (images.length > 1) {
     const slidesHTML = images
-      .map((img, index) => `<img src="${img}" alt="${project.title} - Image ${index + 1}" class="carousel-slide ${index === 0 ? "active" : ""}" />`)
+      .map((img, index) => `<img src="${img}" alt="${project.title} - Image ${index + 1}" class="carousel-slide ${index === 0 ? "active" : ""}" ${index > 0 ? 'loading="lazy"' : ''} />`)
       .join("");
 
     const dotsHTML = images
@@ -223,4 +270,8 @@ window.addEventListener('scroll', () => {
       });
     });
   }
+
+  // Check core resources (first image + fonts)
+  const firstImageEl = detailContent.querySelector('.carousel-slide, .detail-hero img');
+  checkCoreResourcesLoaded(firstImageEl);
 })();
