@@ -13,7 +13,8 @@ function dismissSplash() {
 
 const startTime = Date.now();
 const minDisplayTime = 500;
-const fallbackTimeout = 2500;
+const fallbackTimeout = 3000;
+let fallbackTimer = setTimeout(dismissSplash, fallbackTimeout);
 
 function checkCoreResourcesLoaded() {
   const heroImg = document.querySelector('#dashboard img');
@@ -23,28 +24,20 @@ function checkCoreResourcesLoaded() {
     if (!heroImg || heroImg.complete) {
       resolve();
     } else {
-      heroImg.addEventListener('load', resolve);
-      heroImg.addEventListener('error', resolve);
+      heroImg.addEventListener('load', resolve, { once: true });
+      heroImg.addEventListener('error', resolve, { once: true });
     }
   });
 
   Promise.all([fontPromise, heroImgPromise]).then(() => {
+    clearTimeout(fallbackTimer);
     const elapsedTime = Date.now() - startTime;
     const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
     setTimeout(dismissSplash, remainingTime);
   });
 }
 
-const fallbackTimer = setTimeout(dismissSplash, fallbackTimeout);
-
-if (document.readyState === 'complete') {
-  checkCoreResourcesLoaded();
-} else {
-  window.addEventListener('load', () => {
-    clearTimeout(fallbackTimer);
-    checkCoreResourcesLoaded();
-  });
-}
+checkCoreResourcesLoaded();
 
 // === Navbar ===
 const navbarContainer = document.querySelector('.navbar-container');
@@ -309,7 +302,7 @@ function renderProjects() {
       return `
         <div class="project">
           <div class="picture">
-            <img src="${imageSrc}" alt="${project.title}" />
+            <img src="${imageSrc}" alt="${project.title}" loading="lazy" />
           </div>
           <div class="bottom">
             <div class="desc">
