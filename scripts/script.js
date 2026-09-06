@@ -1,3 +1,51 @@
+// === Splash Screen Handler ===
+const splashScreen = document.querySelector('#splash-screen');
+
+function dismissSplash() {
+  if (!splashScreen || splashScreen.classList.contains('hide')) return;
+  splashScreen.classList.add('hide');
+  setTimeout(() => {
+    if (splashScreen && splashScreen.parentNode) {
+      splashScreen.parentNode.removeChild(splashScreen);
+    }
+  }, 500);
+}
+
+const startTime = Date.now();
+const minDisplayTime = 500;
+const fallbackTimeout = 2500;
+
+function checkCoreResourcesLoaded() {
+  const heroImg = document.querySelector('#dashboard img');
+  const fontPromise = document.fonts ? document.fonts.ready : Promise.resolve();
+
+  const heroImgPromise = new Promise((resolve) => {
+    if (!heroImg || heroImg.complete) {
+      resolve();
+    } else {
+      heroImg.addEventListener('load', resolve);
+      heroImg.addEventListener('error', resolve);
+    }
+  });
+
+  Promise.all([fontPromise, heroImgPromise]).then(() => {
+    const elapsedTime = Date.now() - startTime;
+    const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
+    setTimeout(dismissSplash, remainingTime);
+  });
+}
+
+const fallbackTimer = setTimeout(dismissSplash, fallbackTimeout);
+
+if (document.readyState === 'complete') {
+  checkCoreResourcesLoaded();
+} else {
+  window.addEventListener('load', () => {
+    clearTimeout(fallbackTimer);
+    checkCoreResourcesLoaded();
+  });
+}
+
 // === Navbar ===
 const navbarContainer = document.querySelector('.navbar-container');
 const navbarItems = document.querySelector('.navbar-items');
