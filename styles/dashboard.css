@@ -24,7 +24,7 @@
     "image image"
     "social social";
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   position: relative;
 }
 
@@ -53,6 +53,7 @@
 .intro {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .intro h2 {
@@ -110,9 +111,23 @@
   filter: brightness(0.75);
 }
 
-.dashboard-item img {
-  width: 14rem;
+.dashboard-item .hero {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
   margin: 0 auto;
+  background-color: var(--lightgray);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gray);
+}
+
+.dashboard-item .hero img {
+  width: 85%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .social-container {
@@ -186,11 +201,20 @@
       "introduction image social";
   }
 
-  .dashboard-item img {
-    width: 16rem;
+  .dashboard-item:nth-child(2) {
+    padding-left: 2rem;
+  }
+
+  .dashboard-item .hero {
+    width: 20rem;
+    height: 20rem;
   }
 
   #dashboard .social-icon {
     flex-direction: column;
+  }
+
+  .new-line {
+    display: none;
   }
 }
