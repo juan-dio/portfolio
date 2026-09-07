@@ -26,6 +26,35 @@ const projectsData = [
     techStack: ["Python", "PyTorch", "Streamlit", "OpenCV", "Scikit-Learn"]
   },
   {
+    id: "ngeball-app",
+    title: "NgeBall - Sports Venue Booking App",
+    subtitle: "Dummy Project",
+    category: "Dummy Project",
+    image: "assets/images/projects/ngeball_figma/ngeball1.png",
+    images: [
+      "assets/images/projects/ngeball_figma/ngeball1.png",
+      "assets/images/projects/ngeball_figma/ngeball2.png",
+      "assets/images/projects/ngeball_figma/ngeball3.png",
+      "assets/images/projects/ngeball_figma/ngeball4.png",
+      "assets/images/projects/ngeball_figma/ngeball5.png",
+      "assets/images/projects/ngeball_figma/ngeball6.png",
+      "assets/images/projects/ngeball_figma/ngeball7.png",
+      "assets/images/projects/ngeball_figma/ngeball8.png",
+      "assets/images/projects/ngeball_figma/ngeball9.png",
+      "assets/images/projects/ngeball_figma/ngeball10.png"
+    ],
+    repoUrl: "",
+    liveUrl: "",
+    figmaUrl: "https://www.figma.com/design/1qAi9SDatTNodRxObqqBAx/NgeBall?m=auto&t=jYgoiu18dJa83wRI-1",
+    description: "UI/UX design prototype for NgeBall, a web application designed for booking sports venues such as futsal, basketball, tennis, and padel courts. The design focuses on an intuitive booking flow, schedule availability checking, and venue exploration.",
+    highlights: [
+      "Designed a web app prototype for booking sports facilities including futsal, basketball, tennis, and padel.",
+      "Created user flows for searching venues, selecting time slots, and confirming bookings.",
+      "Developed an interactive Figma prototype with clean UI and modern design components."
+    ],
+    techStack: ["Figma", "UI/UX Design", "Prototyping"]
+  },
+  {
     id: "period-tracker",
     title: "Period Tracker",
     subtitle: "Intern Project",

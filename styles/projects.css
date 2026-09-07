@@ -139,6 +139,12 @@
   color: var(--white);
 }
 
+.project .nav .project-link a.figma {
+  background-color: var(--dark);
+  color: var(--white);
+  text-decoration: none;
+}
+
 .project .nav .project-link a:hover {
   filter: brightness(0.9);
 }

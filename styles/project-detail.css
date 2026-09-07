@@ -86,7 +86,7 @@
 .detail-hero,
 .detail-carousel {
   width: 100%;
-  max-width: 42rem;
+  max-width: 56rem;
   margin: 0 auto 2rem auto;
   aspect-ratio: 2 / 1;
   border: 1px solid var(--gray);
@@ -292,6 +292,11 @@
   color: var(--white);
 }
 
+.detail-links a.figma {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
 .detail-links a.live {
   background-color: var(--white);
   color: var(--dark);
@@ -353,7 +358,7 @@
   }
 
   .detail-container {
-    padding: 6.5rem 3rem 4.5rem;
+    padding: 6rem 3rem 4.5rem;
   }
 
   .detail-title h1 {
@@ -363,7 +368,7 @@
 
 @media only screen and (min-width: 1280px) {
   .detail-container {
-    padding: 8rem 3rem 6rem;
+    padding: 6rem 3rem;
   }
 
   .detail-content {
