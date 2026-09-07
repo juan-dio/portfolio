@@ -201,7 +201,7 @@ const songTitle = document.querySelector('.song-title');
 let songTitleTimeout = null;
 
 const directory = 'assets/musics/';
-const playlist = ['Paramore - The Only Exception', 'Galileo Galilei - Aoi Shiori', 'Sukima Switch - Line'];
+const playlist = ['Paramore - The Only Exception', 'Hayley Williams - Love Me Different', 'Galileo Galilei - Aoi Shiori', 'Sukima Switch - Line', 'LONGMAN - spiral'];
 let currentTrack = Math.floor(Math.random() * playlist.length);
 
 function showSongTitle(title) {
